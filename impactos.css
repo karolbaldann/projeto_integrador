@@ -1,8 +1,8 @@
 /* Importação das fontes */
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Playfair+Display:wght@700&display=swap');
 
-/* Estilos gerais */
-body {
+/* ====== ESTILOS APENAS PARA A PÁGINA DE AQUECIMENTO GLOBAL ====== */
+body.pagina-aquecimento {
     margin: 0;
     padding: 0;
     font-family: 'Heebo', sans-serif;
@@ -11,7 +11,7 @@ body {
 }
 
 /* Título principal */
-h1 {
+body.pagina-aquecimento h1 {
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     text-align: center;
@@ -23,21 +23,18 @@ h1 {
 }
 
 /* Container geral */
-section {
+body.pagina-aquecimento section {
     max-width: 1000px;
     margin: 20px auto;
     padding: 0 15px;
-}
-
-/* Estilo dos cards */
-section {
     display: flex;
     flex-direction: column;
     gap: 20px;
 }
 
-section > div,
-section.card {
+/* Estilo dos cards */
+body.pagina-aquecimento section > div,
+body.pagina-aquecimento section.card {
     background-color: #FAFAFA;
     border: 1px solid #9BC7DE;
     border-radius: 12px;
@@ -46,7 +43,7 @@ section.card {
 }
 
 /* Títulos dos cards */
-section h2 {
+body.pagina-aquecimento section h2 {
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     color: #6A8DC3;
@@ -54,7 +51,7 @@ section h2 {
 }
 
 /* Subtítulos */
-section h3 {
+body.pagina-aquecimento section h3 {
     font-family: 'Heebo', sans-serif;
     font-weight: 600;
     color: #4B788F;
@@ -63,7 +60,7 @@ section h3 {
 }
 
 /* Parágrafos */
-section p {
+body.pagina-aquecimento section p {
     font-family: 'Heebo', sans-serif;
     font-weight: 300;
     color: #000000;
@@ -71,25 +68,25 @@ section p {
 }
 
 /* Listas */
-ul {
+body.pagina-aquecimento ul {
     padding-left: 20px;
     margin: 5px 0 15px 0;
 }
 
-ul li {
+body.pagina-aquecimento ul li {
     margin-bottom: 8px;
     font-weight: 300;
 }
 
 /* Responsividade */
 @media (max-width: 768px) {
-    section {
-        padding: 0 10px;
-    }
-    h1 {
+    body.pagina-aquecimento h1 {
         font-size: 1.8rem;
     }
-    section h2 {
+    body.pagina-aquecimento section h2 {
         font-size: 1.3rem;
+    }
+    body.pagina-aquecimento section {
+        padding: 0 10px;
     }
 }
