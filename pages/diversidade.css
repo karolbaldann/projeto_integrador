@@ -1,0 +1,53 @@
+/* Estilo geral da página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f9f4;
+    color: #2c3e50;
+    line-height: 1.6;
+    padding: 30px;
+    max-width: 900px;
+    margin: 40px auto;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+}
+
+/* Título principal */
+h1 {
+    color: #6a8dc3;
+    font-size: 2.5em;
+    text-align: center;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #cdeeff;
+    padding-bottom: 10px;
+}
+
+/* Parágrafos */
+p {
+    font-size: 1.1em;
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+/* Lista ordenada */
+ol {
+    padding-left: 20px;
+    margin-top: 15px;
+    margin-bottom: 25px;
+}
+
+/* Itens da lista */
+li {
+    margin-bottom: 14px;
+}
+
+/* Destaque nos nomes dos climas */
+strong {
+    color: #6a8dc3;
+}
+
+/* Personaliza o marcador da lista */
+li::marker {
+    color: #6a8dc3;
+    font-weight: bold;
+}
