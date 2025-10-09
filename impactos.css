@@ -1,92 +1,127 @@
-/* Importação das fontes */
 @import url('https://fonts.googleapis.com/css2?family=Heebo:wght@300&family=Playfair+Display:wght@700&display=swap');
 
-/* ====== ESTILOS APENAS PARA A PÁGINA DE AQUECIMENTO GLOBAL ====== */
+/* ====== GERAL ====== */
 body.pagina-aquecimento {
     margin: 0;
     padding: 0;
     font-family: 'Heebo', sans-serif;
-    background-color: #FDF8F4;
+    background-color: #CDEEFF;
     color: #000000;
 }
 
-/* Título principal */
+/* ====== TÍTULO PRINCIPAL ====== */
 body.pagina-aquecimento h1 {
     font-family: 'Playfair Display', serif;
     font-weight: bold;
     text-align: center;
-    color: #4B788F;
+    color: #000000;
     background-color: #CDEEFF;
     padding: 20px;
     margin: 0;
-    border-bottom: 4px solid #6A8DC3;
+    border-bottom: 4px solid #CDEEFF;
 }
 
-/* Container geral */
-body.pagina-aquecimento section {
-    max-width: 1000px;
+/* ====== CONTAINER DOS 3 PRIMEIROS CARDS ====== */
+.cards-container {
+    max-width: 100000px;
     margin: 20px auto;
     padding: 0 15px;
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 20px;
+    justify-content: center;
 }
 
-/* Estilo dos cards */
-body.pagina-aquecimento section > div,
-body.pagina-aquecimento section.card {
+/* ====== TODOS OS CARDS ====== */
+.card {
     background-color: #FAFAFA;
-    border: 1px solid #9BC7DE;
+    border: 1px solid #8fc1db;
     border-radius: 12px;
     padding: 20px;
     box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    max-width: 1000px;
+    margin: 20px auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+
 }
 
-/* Títulos dos cards */
-body.pagina-aquecimento section h2 {
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 80, 0.2);
+}
+/* ====== APENAS OS 3 PRIMEIROS CARDS (dentro do container) ====== */
+.cards-container .card {
+    flex: 1 1 30%;
+    max-width: 30%;
+    margin: 0;
+}
+
+/* ====== TÍTULOS DOS CARDS ====== */
+.card h2 {
     font-family: 'Playfair Display', serif;
     font-weight: bold;
-    color: #6A8DC3;
+    color: #4B788F;
     margin-bottom: 10px;
 }
 
-/* Subtítulos */
-body.pagina-aquecimento section h3 {
-    font-family: 'Heebo', sans-serif;
+/* ====== SUBTÍTULOS (h3) ====== */
+.card h3 {
+    font-family: 'Playfair Display', sans-serif;
     font-weight: 600;
-    color: #4B788F;
+    color: #6A8DC3;
     margin-top: 15px;
     margin-bottom: 5px;
 }
 
-/* Parágrafos */
-body.pagina-aquecimento section p {
+/* ====== PARÁGRAFOS ====== */
+.card p {
     font-family: 'Heebo', sans-serif;
     font-weight: 300;
     color: #000000;
     line-height: 1.6;
 }
 
-/* Listas */
-body.pagina-aquecimento ul {
+/* ====== LISTAS ====== */
+.card ul {
     padding-left: 20px;
     margin: 5px 0 15px 0;
 }
 
-body.pagina-aquecimento ul li {
+.card ul li {
     margin-bottom: 8px;
     font-weight: 300;
 }
 
-/* Responsividade */
+/* ====== IMAGENS ====== */
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+/* ====== RESPONSIVIDADE ====== */
 @media (max-width: 768px) {
     body.pagina-aquecimento h1 {
         font-size: 1.8rem;
     }
-    body.pagina-aquecimento section h2 {
+
+    .card h2 {
         font-size: 1.3rem;
     }
-    body.pagina-aquecimento section {
+
+    .cards-container,
+    .card {
         padding: 0 10px;
+    }
+
+    /* Cards do container empilham no mobile */
+    .cards-container {
+        flex-direction: column;
+    }
+
+    .cards-container .card {
+        max-width: 100%;
+        flex: 1 1 100%;
     }
 }
