@@ -6,9 +6,65 @@
     <title>Fenômenos Atmosféricos</title>
     <link href="estilos/estilo.css" rel="stylesheet" />
     <link href="sertão.css" rel="stylesheet" />
+
+    <style>
+        /* ==== ESTILO DO CARD ADICIONADO ==== */
+        .card {
+            background: #fff;
+            width: 350px;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            margin: 40px auto;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .card h1 {
+            font-size: 1.8rem;
+            color: #222;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 0.95rem;
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            color: #444;
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #0077ff;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #005fcc;
+        }
+
+        /* Centralização do card no layout existente */
+        .conteudo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px 0;
+        }
+    </style>
 </head>
 <body>
-
+ 
     <header>
         <h1>Os fenômenos que envolvem a atmosfera</h1>
     </header>
@@ -27,6 +83,29 @@
     <div style="background-image: url('https://via.placeholder.com/1920x1080'); background-size: cover; background-position: center; height: 500px; display: flex; align-items: center; justify-content: center; color: white;">
         <h2>Os fenômenos que envolvem a atmosfera</h2>
     </div>
+
+    <!-- card de Karol -->
+    <section class="conteudo">
+        <div class="card">
+            <h1>As funções da atmosfera</h1>
+            <p>Uma das principais funções da atmosfera é a regulação climática. 
+                Ela que permite a vida humana. Mas será que é só isso? 
+                Aqui, nós descobriremos juntos que a resposta é: não!!
+            </p>
+
+            <ul>
+                <li>O que é a atmosfera e a sua divisão.</li>
+                <li>Proteção contra radiação UV.</li>
+                <li>Regulação da temperatura e clima.</li>
+                <li>Transporte de gases e substâncias.</li>
+                <li>Ciclo da água e a sustentação da vida.</li>
+                <li>Impactos das atividades humanas.</li>
+            </ul>
+
+            <a href="pages/importancia.html" class="btn">Saiba mais</a>
+        </div>
+    </section>
+
 
     <footer>
         <p>Prontos para saber mais?</p>
