@@ -12,12 +12,12 @@ h1, h2, h3 {
     margin-top: 1.2em;
 }
 
-/* SEÇÃO PRINCIPAL (estilo da imagem) */
+/* ESTILOS INTRO */
 .intro {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #cce7f6; /* azul claro */
+    background-color: #cce7f6;
     padding: 60px 80px;
     flex-wrap: wrap;
 }
@@ -67,7 +67,6 @@ h1, h2, h3 {
     border-radius: 5px 0 0 5px;
 }
 
-/* OUTRAS SEÇÕES */
 img {
     display: block;
     margin: 20px auto;
@@ -81,9 +80,6 @@ img {
     max-width: 800px;
     margin: 40px auto;
     padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
 .lista {
@@ -94,19 +90,162 @@ img {
     margin-bottom: 10px;
 }
 
+/* ESTILOS PARA A SEÇÃO "COMO ELA É DIVIDIDA?" (5 COLUNAS) */
+
+.titulo-camadas {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2.5em;
+    text-align: center;
+    color: #000;
+    margin-bottom: 40px;
+    margin-top: 10px;
+}
+
+.camadas-grid {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 0 10px;
+    gap: 10px;
+}
+
+.camada-item {
+    flex: 1 1 18%; 
+    max-width: 18%; 
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.05em;
+    line-height: 1.6;
+}
+
+.camada-item p {
+    margin: 0;
+    padding: 0;
+    text-indent: -1em;
+    padding-left: 1em;
+}
+
+/* NOVOS ESTILOS PARA O CARROSSEL */
+
+.slider-wrapper {
+    /* Define o fundo azul-cinza claro da imagem */
+    background-color: #e6e6e6; 
+    padding: 50px 0;
+    margin-top: 40px;
+    position: relative; /* Essencial para posicionar as setas (filhos) */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slider-card {
+    /* Cartão branco central */
+    background-color: #ffffff;
+    max-width: 700px;
+    width: 90%;
+    padding: 50px;
+    border-radius: 5px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+}
+
+.slider-card h3 {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 2em;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+
+.slider-card p {
+    font-size: 1.1em;
+    line-height: 1.8;
+    color: #555;
+    margin-bottom: 40px;
+    text-align: justify;
+}
+
+.slider-arrow {
+    /* Estilo das setas */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    color: #000;
+    z-index: 10;
+}
+
+.slider-arrow.left {
+    left: 20px; /* Distância da borda esquerda */
+}
+
+.slider-arrow.right {
+    right: 20px; /* Distância da borda direita */
+}
+
+.slider-arrow svg {
+    width: 30px;
+    height: 30px;
+}
+
+.slider-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.dot.active {
+    background-color: #333;
+}
+
 /* RESPONSIVIDADE */
+
+@media (max-width: 1200px) {
+    .camada-item {
+        flex: 1 1 calc(33% - 15px);
+        max-width: calc(33% - 15px);
+    }
+    .camadas-grid {
+        justify-content: center;
+    }
+}
+
 @media (max-width: 900px) {
     .intro {
         flex-direction: column;
         text-align: center;
     }
-
     .intro .imagem {
         text-align: center;
     }
-
     .intro img {
         max-width: 100%;
         margin-top: 30px;
+    }
+    .slider-arrow {
+        /* Move as setas mais para perto do cartão em telas pequenas */
+        left: 5px;
+        right: 5px;
+    }
+    .slider-card {
+        padding: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .camada-item {
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
     }
 }
