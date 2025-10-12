@@ -73,6 +73,72 @@
         }
 
     </style>
+    <style>
+        /* card de Allana */
+        .secao-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 60px;
+            background-color: #f4f4f9;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #fff;
+            width: 450px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .card h1 {
+            font-size: 2rem;
+            color: #111;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            color: #7c7c7c;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #1c86ff;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #1880f7;
+        }
+
+        /* imagem */
+        .imagem-card {
+            width: 500px;
+            height: 350px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 8px 25px rgba(17, 17, 17, 0.1);
+        }
+
+    </style>
 </head>
 <body>
  
@@ -111,7 +177,7 @@
                 <li>Transporte de gases e substâncias.</li>
                 <li>Ciclo da água e a sustentação da vida.</li>
                 <li>Impactos das atividades humanas.</li>
-            </ul>
+            </ul>l
 
             <a href="pages/importancia.html" class="btn">Saiba mais</a>
         </div>
@@ -120,6 +186,28 @@
              alt="Imagem da atmosfera" class="imagem-card">
     </section>
 
+    <!-- card de Allana -->
+    <section class="secao-card">
+        <div class="card">
+            <h1>Fenômenos das Chuvas no Sertão Cearense</h1>
+            <p>Será que você conhece todos os fenômenos que acontecem aqui no Ceará?!
+             Então vem aqui para conhecer um pouco mais sobre esse assunto!!
+             Olha só o que você vai entender.
+            </p>
+
+            <ul>
+                <li>Tipos de Chuva.</li>
+                <li>Tipos de Fenômenos</li>
+                <li>Peculiaridades das Chuvas no Sertão</li>
+                <li>Impactos Positivos das Chuvas</li>
+            </ul>
+
+            <a href="pages/sertao.html" class="btn">Saiba mais</a>
+        </div>
+
+        <img src="image.jpg" 
+             alt="Imagem do sertão" class="imagem-card">
+    </section>
     <footer>
         <p>Prontos para saber mais?</p>
     </footer>
