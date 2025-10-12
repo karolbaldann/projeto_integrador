@@ -139,6 +139,72 @@
         }
 
     </style>
+    <style>
+        /* card de Gabi */
+        .secao-card {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            padding: 60px;
+            background-color: #f4f4f9;
+            flex-wrap: wrap;
+        }
+
+        .card {
+            background: #fff;
+            width: 450px;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .card h1 {
+            font-size: 2rem;
+            color: #111;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #555;
+            font-size: 1rem;
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .card ul {
+            padding-left: 20px;
+            color: #7c7c7c;
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #1c86ff;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-weight: 600;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #1880f7;
+        }
+
+        /* imagem */
+        .imagem-card {
+            width: 500px;
+            height: 350px;
+            border-radius: 20px;
+            object-fit: cover;
+            box-shadow: 0 8px 25px rgba(17, 17, 17, 0.1);
+        }
+
+    </style>
 </head>
 <body>
  
@@ -208,6 +274,30 @@
         <img src="image.jpg" 
              alt="Imagem do sertão" class="imagem-card">
     </section>
+ <!-- card de Gabi -->
+    <section class="secao-card">
+        <div class="card">
+            <h1>Clima do Ceará e suas pecularidades</h1>
+            <p>Será que você conhece o clima do Ceará e quais as suas principais peculiaridades?!
+             Então vem ver só o que vai entender!!
+             Ficou curioso, então clica em saiba mais.
+            </p>
+
+            <ul>
+                <li>Resumo das secas.</li>
+                <li>Cultura das estações</li>
+                <li>Feriado de São José</li>
+                <li>Qualidade de vida no sertão</li>
+                <li>Convivência no Semiárido</li>
+            </ul>
+
+            <a href="pages/climas.html" class="btn">Saiba mais</a>
+        </div>
+
+        <img src="imagens/caatinga.jpg" 
+             alt="Imagem do clima" class="imagem-card">
+    </section>
+
     <footer>
         <p>Prontos para saber mais?</p>
     </footer>
