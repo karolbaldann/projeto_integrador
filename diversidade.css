@@ -51,12 +51,3 @@ li::marker {
     color: #6a8dc3;
     font-weight: bold;
 }
-.card {
-    background-color: #f8fafd;
-    border: 1px solid #6a8dc3;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 15px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
