@@ -277,6 +277,82 @@
   background-color: #005fcc;
 }
 </style>
+
+
+<style>
+     /* card de thai */
+.secao-card-aquecimento {
+  display: flex;
+  height: 90vh;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Metade com a imagem */
+.secao-card-aquecimento .imagem {
+  flex: 1;
+  background-image: url("/imagens/Aquecimento-Global-2.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+/* Metade com o card */
+.secao-card-aquecimento .card {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+/* Título */
+.secao-card-aquecimento .card h1 {
+  font-size: 2.5rem;
+  color: #111;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+/* Parágrafo */
+.secao-card-aquecimento .card p {
+  color: #333;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+/* Lista */
+.secao-card-aquecimento .card ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #444;
+  font-size: 1rem;
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+/* Botão */
+.secao-card-aquecimento .btn {
+  display: inline-block;
+  background-color: #0077ff;
+  color: white;
+  text-decoration: none;
+  padding: 12px 28px;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.secao-card-aquecimento .btn:hover {
+  background-color: #005fcc;
+}
+
+
+</style>
 </head>
 <body>
  
@@ -395,6 +471,32 @@
   </div>
 </section>
 
+<!-- card de thai -->
+    <section class="secao-card">
+        <div class="card">
+            <h1>A importância da atsmofera</h1>
+            <p>A nossa atmosfera é de extrema importância para a vida na Terra, 
+                protege o planeta da radiação solar nociva, regula a temperatura e fornece os gases 
+                necessários para a respiração e fotossíntese.
+            Para saber mais sobre, clique em saiba mais!
+            </p>
+
+            <ul>
+                <li>Principais Gases do Efeito Estufa</li>
+                <li>Propriedades Importantes </li>
+                <li>Potência de aquecimento (GWP)</li>
+                <li>Tempo de residência na atmosfera</li>
+                <li>Capacidade de absorver radiação infravermelha</li>
+            </ul>
+
+            <a href="pages/importancia.html" class="btn">Saiba mais</a>
+        </div>
+
+        <img src="atmosfera.webp" 
+             alt="Imagem do clima" class="imagem-card">
+    </section>
+
+ 
 
     <footer>
         <p>Prontos para saber mais?</p>
