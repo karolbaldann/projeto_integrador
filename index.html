@@ -6,399 +6,148 @@
     <title>Fenômenos Atmosféricos</title>
     <link href="estilos/estilo.css" rel="stylesheet" />
     <link href="sertão.css" rel="stylesheet" />
-
+    <link href="estilos.css" rel="stylesheet" /> 
+    <link href="index.css" rel="stylesheet" /> 
+    
     <style>
-        /* card de Karol */
         .secao-card {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            padding: 60px;
-            background-color: #f4f4f9;
-            flex-wrap: wrap;
+            flex-wrap: wrap; 
+            justify-content: center; 
+            margin-bottom: 40px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            padding: 20px;
+            gap: 30px; 
         }
 
         .card {
-            background: #fff;
-            width: 450px;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            font-family: 'Poppins', sans-serif;
+            width: 300px; 
+            aspect-ratio: auto;
+            display: flex;
+            flex-direction: column; 
+            border-radius: 15px;
+            background-color: #f4f4f4;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden; 
         }
 
-        .card h1 {
-            font-size: 2rem;
-            color: #111;
+        .card-imagem-topo {
+            width: 100%; 
+            height: 200px; 
+            object-fit: cover; 
+            display: block;
+            margin: 0; 
+            border-radius: 0; 
+        }
+
+        .card-conteudo {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1; 
+        }
+
+        /* TÍTULO DIMINUÍDO: font-size de 1.3em para 1.1em */
+        .card-conteudo h1 {
+            font-size: 1.1em; 
+            margin-top: 0;
             margin-bottom: 15px;
-        }
-
-        .card p {
-            color: #555;
-            font-size: 1rem;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .card ul {
-            padding-left: 20px;
-            color: #444;
-            font-size: 0.95rem;
-            margin-bottom: 25px;
+            /* Garante que o texto não corte se for muito longo */
+            word-wrap: break-word; 
         }
 
         .btn {
             display: inline-block;
-            background-color: #0077ff;
-            color: white;
+            padding: 12px 25px;
             text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: background 0.3s ease;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: background-color 0.3s ease, transform 0.1s ease;
+            margin-top: auto;
+            align-self: flex-start;
+            width: auto;
         }
 
         .btn:hover {
-            background-color: #005fcc;
+            background-color: #0056b3;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transform: translateY(-2px);
         }
 
-        /* imagem */
-        .imagem-card {
-            width: 500px;
-            height: 350px;
-            border-radius: 20px;
-            object-fit: cover;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        .btn:active {
+            background-color: #004085;
+            transform: translateY(0);
+            box-shadow: none;
         }
 
+        @media (max-width: 768px) {
+            .secao-card {
+                justify-content: center;
+            }
+            
+            .card {
+                 width: 90%; 
+                 margin-left: auto;
+                 margin-right: auto;
+            }
+        }
     </style>
-    <style>
-        /* card de Allana */
-        .secao-card {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            padding: 60px;
-            background-color: #f4f4f9;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background: #fff;
-            width: 450px;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .card h1 {
-            font-size: 2rem;
-            color: #111;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            color: #555;
-            font-size: 1rem;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .card ul {
-            padding-left: 20px;
-            color: #7c7c7c;
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #1c86ff;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #1880f7;
-        }
-
-        /* imagem */
-        .imagem-card {
-            width: 500px;
-            height: 350px;
-            border-radius: 20px;
-            object-fit: cover;
-            box-shadow: 0 8px 25px rgba(17, 17, 17, 0.1);
-        }
-
-    </style>
-    <style>
-        /* card de Gabi */
-        .secao-card {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            padding: 60px;
-            background-color: #f4f4f9;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background: #fff;
-            width: 450px;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .card h1 {
-            font-size: 2rem;
-            color: #111;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            color: #555;
-            font-size: 1rem;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .card ul {
-            padding-left: 20px;
-            color: #7c7c7c;
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #1c86ff;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #1880f7;
-        }
-
-        /* imagem */
-        .imagem-card {
-            width: 500px;
-            height: 350px;
-            border-radius: 20px;
-            object-fit: cover;
-            box-shadow: 0 8px 25px rgba(17, 17, 17, 0.1);
-        }        
-    </style>
-
- <style>
-     /* card de anaju */
-.secao-card-aquecimento {
-  display: flex;
-  height: 90vh;
-  font-family: 'Poppins', sans-serif;
-}
-
-/* Metade com a imagem */
-.secao-card-aquecimento .imagem {
-  flex: 1;
-  background-image: url("/imagens/Aquecimento-Global-2.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-/* Metade com o card */
-.secao-card-aquecimento .card {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.95);
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  border-radius: 0;
-  box-shadow: none;
-}
-
-/* Título */
-.secao-card-aquecimento .card h1 {
-  font-size: 2.5rem;
-  color: #111;
-  margin-bottom: 20px;
-  font-weight: 700;
-}
-
-/* Parágrafo */
-.secao-card-aquecimento .card p {
-  color: #333;
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 25px;
-}
-
-/* Lista */
-.secao-card-aquecimento .card ul {
-  list-style-type: disc;
-  padding-left: 20px;
-  color: #444;
-  font-size: 1rem;
-  margin-bottom: 30px;
-  text-align: left;
-}
-
-/* Botão */
-.secao-card-aquecimento .btn {
-  display: inline-block;
-  background-color: #0077ff;
-  color: white;
-  text-decoration: none;
-  padding: 12px 28px;
-  border-radius: 30px;
-  font-weight: 600;
-  transition: background 0.3s ease;
-}
-
-.secao-card-aquecimento .btn:hover {
-  background-color: #005fcc;
-}
-</style>
 </head>
 <body>
- 
+    
     <header>
         <h1>Os fenômenos que envolvem a atmosfera</h1>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="pages/definicoes.html">Definições</a></li>
-            <li><a href="pages/diversidade.html">Diversidade</a></li>
-            <li><a href="pages/impactos.html">Impactos</a></li>
-            <li><a href="pages/climas.html">Climas</a></li>
-            <li><a href="pages/sertao.html">Sertão</a></li>
-            <li><a href="pages/importancia.html">Importância</a></li>
-        </ul>
-    </nav>
+    <section class="secao-card"> 
 
-    <div style="background-image: url('https://via.placeholder.com/1920x1080'); background-size: cover; background-position: center; height: 500px; display: flex; align-items: center; justify-content: center; color: white;">
-        <h2>Os fenômenos que envolvem a atmosfera</h2>
-    </div>
-
-    <!-- card de Karol -->
-    <section class="secao-card">
-        <div class="card">
-            <h1>As funções da atmosfera</h1>
-            <p>Uma das principais funções da atmosfera é a regulação climática. 
-                Ela que permite a vida humana. Mas será que é só isso? 
-                Aqui, nós descobriremos juntos que a resposta é: não!!
-            </p>
-
-            <ul>
-                <li>O que é a atmosfera e a sua divisão.</li>
-                <li>Proteção contra radiação UV.</li>
-                <li>Regulação da temperatura e clima.</li>
-                <li>Transporte de gases e substâncias.</li>
-                <li>Ciclo da água e a sustentação da vida.</li>
-                <li>Impactos das atividades humanas.</li>
-            </ul>l
-
-            <a href="pages/importancia.html" class="btn">Saiba mais</a>
+        <div class="card primeiro-card"> 
+            <img src="atmosfera.webp" alt="Imagem da atmosfera" class="card-imagem-topo">
+            <div class="card-conteudo">
+                <h1>As funções da atmosfera</h1>
+                <a href="pages/definicoes.html" class="btn">Saiba mais</a>
+            </div>
         </div>
 
-        <img src="Poluicao-Atmosferica.png" 
-             alt="Imagem da atmosfera" class="imagem-card">
-    </section>
-
-    <!-- card de Allana -->
-    <section class="secao-card">
         <div class="card">
-            <h1>Fenômenos das Chuvas no Sertão Cearense</h1>
-            <p>Será que você conhece todos os fenômenos que acontecem aqui no Ceará?!
-             Então vem aqui para conhecer um pouco mais sobre esse assunto!!
-             Olha só o que você vai entender.
-            </p>
-
-            <ul>
-                <li>Tipos de Chuva.</li>
-                <li>Tipos de Fenômenos</li>
-                <li>Peculiaridades das Chuvas no Sertão</li>
-                <li>Impactos Positivos das Chuvas</li>
-            </ul>
-
-            <a href="pages/sertao.html" class="btn">Saiba mais</a>
+            <img src="image.jpg" alt="Imagem do sertão" class="card-imagem-topo">
+            <div class="card-conteudo">
+                <h1>Fenômenos das Chuvas no Sertão Cearense</h1>
+                <a href="pages/sertao.html" class="btn">Saiba mais</a>
+            </div>
         </div>
 
-        <img src="image.jpg" 
-             alt="Imagem do sertão" class="imagem-card">
-    </section>
- <!-- card de Gabi -->
-    <section class="secao-card">
         <div class="card">
-            <h1>Clima do Ceará e suas pecularidades</h1>
-            <p>Será que você conhece o clima do Ceará e quais as suas principais peculiaridades?!
-             Então vem ver só o que vai entender!!
-             Ficou curioso, então clica em saiba mais.
-            </p>
-
-            <ul>
-                <li>Resumo das secas.</li>
-                <li>Cultura das estações</li>
-                <li>Feriado de São José</li>
-                <li>Qualidade de vida no sertão</li>
-                <li>Convivência no Semiárido</li>
-            </ul>
-
-            <a href="pages/climas.html" class="btn">Saiba mais</a>
+            <img src="imagens/caatinga.jpg" alt="Imagem do clima" class="card-imagem-topo">
+            <div class="card-conteudo">
+                <h1>Clima do Ceará e suas pecularidades</h1>
+                <a href="pages/climas.html" class="btn">Saiba mais</a>
+            </div>
         </div>
 
-        <img src="imagens/caatinga.jpg" 
-             alt="Imagem do clima" class="imagem-card">
+        <div class="card">
+            <img src="imagens/Aquecimento-Global-2.jpg" alt="aquecimento Imagem" class="card-imagem-topo">
+            <div class="card-conteudo">
+                <h1>Aquecimento Global</h1>
+                <a href="pages/impactos.html" class="btn"> Saiba mais</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <img src="atmosfera.webp" alt="Imagem do clima" class="card-imagem-topo">
+            <div class="card-conteudo">
+                <h1>A importância da atsmofera</h1>
+                <a href="pages/importancia.html" class="btn">Saiba mais</a>
+            </div>
+        </div>
     </section>
-
-       <!-- card de ana ju -->
-<section class="secao-card-aquecimento">
-    <div class="imagem"></div>
-  <div class="card">
-    <h1>Aquecimento Global</h1>
-    <p>
-      O aquecimento global é o aumento gradual da temperatura média da Terra,
-      causado principalmente pelo aumento da concentração de gases do efeito estufa
-      na atmosfera. Aqui você vai ver o que é e onde o aquecimento global influencia.
-    </p>
-
-    <ul>
-      <li>O que é o aquecimento Global.</li>
-      <li>Impactos do aquecimento global.</li>
-      <li>Mudanças climáticas no Brasil.</li>
-      <li>Saúde.</li>
-      <li>Meio Ambiente e Agricultura.</li>
-      <li>Economia e Sociedade.</li>
-    </ul>
-     <img src="/imagens/Aquecimento-Global-2.jpg" 
-        alt="aquecimento Imagem">
-    <a href="pages/impactos.html" class="btn"> Saiba mais</a>
-  </div>
-</section>
-
-
-    <footer>
-        <p>Prontos para saber mais?</p>
-    </footer>
 
 </body>
 </html>
