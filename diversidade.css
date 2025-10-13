@@ -1,62 +1,125 @@
-/* Estilo geral da página */
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f9f4;
-    color: #2c3e50;
-    line-height: 1.6;
-    padding: 30px;
-    max-width: 900px;
-    margin: 40px auto;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
+/* ====== GERAL ====== */
+body.pagina-aquecimento {
+    margin: 0;
+    padding: 0;
+    font-family: 'Heebo', sans-serif;
+    background-color: #CDEEFF;
+    color: #000000;
 }
 
-/* Título principal */
-h1 {
-    color: #6a8dc3;
-    font-size: 2.5em;
-    text-align: center;
-    margin-bottom: 25px;
-    border-bottom: 2px solid #cdeeff;
-    padding-bottom: 10px;
-}
-
-/* Parágrafos */
-p {
-    font-size: 1.1em;
-    margin-bottom: 16px;
-    text-align: justify;
-}
-
-/* Lista ordenada */
-ol {
-    padding-left: 20px;
-    margin-top: 15px;
-    margin-bottom: 25px;
-}
-
-/* Itens da lista */
-li {
-    margin-bottom: 14px;
-}
-
-/* Destaque nos nomes dos climas */
-strong {
-    color: #6a8dc3;
-}
-
-/* Personaliza o marcador da lista */
-li::marker {
-    color: #6a8dc3;
+/* ====== TÍTULO PRINCIPAL ====== */
+body.pagina-aquecimento h1 {
+    font-family: 'Playfair Display', serif;
     font-weight: bold;
-}
-.card {
-    background-color: #f8fafd;
-    border: 1px solid #6a8dc3;
-    border-radius: 8px;
+    text-align: center;
+    color: #000000;
+    background-color: #CDEEFF;
     padding: 20px;
-    margin: 15px 0;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    margin: 0;
+    border-bottom: 4px solid #CDEEFF;
+}
+
+/* ====== CONTAINER DOS 3 PRIMEIROS CARDS ====== */
+.cards-container {
+    max-width: 100000px;
+    margin: 20px auto;
+    padding: 0 15px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+/* ====== TODOS OS CARDS ====== */
+.card {
+    background-color: #FAFAFA;
+    border: 1px solid #8fc1db;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0px 4px 6px rgba(0,0,0,0.1);
+    max-width: 1000px;
+    margin: 20px auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-sizing: border-box;
+
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 80, 0.2);
+}
+/* ====== APENAS OS 3 PRIMEIROS CARDS (dentro do container) ====== */
+.cards-container .card {
+    flex: 1 1 30%;
+    max-width: 30%;
+    margin: 0;
+}
+
+/* ====== TÍTULOS DOS CARDS ====== */
+.card h2 {
+    font-family: 'Playfair Display', serif;
+    font-weight: bold;
+    color: #4B788F;
+    margin-bottom: 10px;
+}
+
+/* ====== SUBTÍTULOS (h3) ====== */
+.card h3 {
+    font-family: 'Playfair Display', sans-serif;
+    font-weight: 600;
+    color: #6A8DC3;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* ====== PARÁGRAFOS ====== */
+.card p {
+    font-family: 'Heebo', sans-serif;
+    font-weight: 300;
+    color: #000000;
+    line-height: 1.6;
+}
+
+/* ====== LISTAS ====== */
+.card ul {
+    padding-left: 20px;
+    margin: 5px 0 15px 0;
+}
+
+.card ul li {
+    margin-bottom: 8px;
+    font-weight: 300;
+}
+
+/* ====== IMAGENS ====== */
+.card img {
+    width: 100%;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+/* ====== RESPONSIVIDADE ====== */
+@media (max-width: 768px) {
+    body.pagina-aquecimento h1 {
+        font-size: 1.8rem;
+    }
+
+    .card h2 {
+        font-size: 1.3rem;
+    }
+
+    .cards-container,
+    .card {
+        padding: 0 10px;
+    }
+
+    /* Cards do container empilham no mobile */
+    .cards-container {
+        flex-direction: column;
+    }
+
+    .cards-container .card {
+        max-width: 100%;
+        flex: 1 1 100%;
+    }
 }

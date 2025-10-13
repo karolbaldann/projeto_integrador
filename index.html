@@ -8,7 +8,7 @@
     <link href="sertão.css" rel="stylesheet" />
 
     <style>
-        /* card de Karol */
+        /* Estilos Consolidados para todos os Cards (Karol, Allana, Gabi) */
         .secao-card {
             display: flex;
             align-items: center;
@@ -16,7 +16,7 @@
             gap: 40px;
             padding: 60px;
             background-color: #f4f4f9;
-            flex-wrap: wrap;
+            flex-wrap: wrap; /* Garante que quebre para a próxima linha em telas menores */
         }
 
         .card {
@@ -43,27 +43,15 @@
 
         .card ul {
             padding-left: 20px;
-            color: #444;
+            /* Cor levemente diferente para o primeiro card, 
+               ajustado para a cor #444 que estava no primeiro estilo */
+            color: #444; 
             font-size: 0.95rem;
             margin-bottom: 25px;
+            list-style-type: disc; /* Garante marcadores de lista */
         }
 
-        .btn {
-            display: inline-block;
-            background-color: #0077ff;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #005fcc;
-        }
-
-        /* imagem */
+        /* Imagem padrão para os cards */
         .imagem-card {
             width: 500px;
             height: 350px;
@@ -71,52 +59,11 @@
             object-fit: cover;
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
         }
-
-    </style>
-    <style>
-        /* card de Allana */
-        .secao-card {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 40px;
-            padding: 60px;
-            background-color: #f4f4f9;
-            flex-wrap: wrap;
-        }
-
-        .card {
-            background: #fff;
-            width: 450px;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            font-family: 'Poppins', sans-serif;
-        }
-
-        .card h1 {
-            font-size: 2rem;
-            color: #111;
-            margin-bottom: 15px;
-        }
-
-        .card p {
-            color: #555;
-            font-size: 1rem;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .card ul {
-            padding-left: 20px;
-            color: #7c7c7c;
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-        }
-
+        
+        /* Estilos Padrão do Botão */
         .btn {
             display: inline-block;
-            background-color: #1c86ff;
+            background-color: #0077ff; /* Cor padrão do primeiro card */
             color: white;
             text-decoration: none;
             padding: 10px 20px;
@@ -126,22 +73,16 @@
         }
 
         .btn:hover {
-            background-color: #1880f7;
+            background-color: #005fcc; /* Cor hover padrão do primeiro card */
         }
 
-        /* imagem */
-        .imagem-card {
-            width: 500px;
-            height: 350px;
-            border-radius: 20px;
-            object-fit: cover;
-            box-shadow: 0 8px 25px rgba(17, 17, 17, 0.1);
-        }
-
-    </style>
-    <style>
-        /* card de Gabi */
-        .secao-card {
+        /* ESTILOS ESPECÍFICOS PARA O CARD DE AQUECIMENTO GLOBAL (Ana Ju) */
+        /* Usa a mesma classe de seção, mas o layout do conteúdo é invertido 
+           nos exemplos originais, então criei uma classe específica 
+           para seguir o padrão lado a lado. */
+        
+        .secao-card-aquecimento {
+            /* Mantém o mesmo layout flexível dos outros cards */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -149,54 +90,17 @@
             padding: 60px;
             background-color: #f4f4f9;
             flex-wrap: wrap;
-        }
-
-        .card {
-            background: #fff;
-            width: 450px;
-            padding: 30px;
-            border-radius: 20px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
             font-family: 'Poppins', sans-serif;
         }
 
-        .card h1 {
-            font-size: 2rem;
-            color: #111;
-            margin-bottom: 15px;
+        /* Opcional: Estilos para o card de Ana Ju se for diferente, 
+           mas aqui ele usa o .card padrão para consistência */
+        .secao-card-aquecimento .card {
+            text-align: left; /* Garante que o texto dentro do card não seja centralizado, como estava no seu código original */
         }
-
-        .card p {
-            color: #555;
-            font-size: 1rem;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .card ul {
-            padding-left: 20px;
-            color: #7c7c7c;
-            font-size: 0.95rem;
-            margin-bottom: 25px;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: #1c86ff;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 25px;
-            font-weight: 600;
-            transition: background 0.3s ease;
-        }
-
-        .btn:hover {
-            background-color: #1880f7;
-        }
-
-        /* imagem */
-        .imagem-card {
+        
+        /* Opcional: Estilo da imagem para Ana Ju */
+        .imagem-card-anaju {
             width: 500px;
             height: 350px;
             border-radius: 20px;
@@ -355,27 +259,16 @@
 </style>
 </head>
 <body>
- 
+    
     <header>
         <h1>Os fenômenos que envolvem a atmosfera</h1>
     </header>
 
-    <nav>
-        <ul>
-            <li><a href="pages/definicoes.html">Definições</a></li>
-            <li><a href="pages/diversidade.html">Diversidade</a></li>
-            <li><a href="pages/impactos.html">Impactos</a></li>
-            <li><a href="pages/climas.html">Climas</a></li>
-            <li><a href="pages/sertao.html">Sertão</a></li>
-            <li><a href="pages/importancia.html">Importância</a></li>
-        </ul>
-    </nav>
 
     <div style="background-image: url('https://via.placeholder.com/1920x1080'); background-size: cover; background-position: center; height: 500px; display: flex; align-items: center; justify-content: center; color: white;">
         <h2>Os fenômenos que envolvem a atmosfera</h2>
     </div>
 
-    <!-- card de Karol -->
     <section class="secao-card">
         <div class="card">
             <h1>As funções da atmosfera</h1>
@@ -391,7 +284,7 @@
                 <li>Transporte de gases e substâncias.</li>
                 <li>Ciclo da água e a sustentação da vida.</li>
                 <li>Impactos das atividades humanas.</li>
-            </ul>l
+            </ul>
 
             <a href="pages/importancia.html" class="btn">Saiba mais</a>
         </div>
@@ -400,7 +293,6 @@
              alt="Imagem da atmosfera" class="imagem-card">
     </section>
 
-    <!-- card de Allana -->
     <section class="secao-card">
         <div class="card">
             <h1>Fenômenos das Chuvas no Sertão Cearense</h1>
@@ -422,7 +314,7 @@
         <img src="image.jpg" 
              alt="Imagem do sertão" class="imagem-card">
     </section>
- <!-- card de Gabi -->
+
     <section class="secao-card">
         <div class="card">
             <h1>Clima do Ceará e suas pecularidades</h1>
@@ -446,29 +338,25 @@
              alt="Imagem do clima" class="imagem-card">
     </section>
 
-       <!-- card de ana ju -->
-<section class="secao-card-aquecimento">
-    <div class="imagem"></div>
-  <div class="card">
-    <h1>Aquecimento Global</h1>
-    <p>
-      O aquecimento global é o aumento gradual da temperatura média da Terra,
-      causado principalmente pelo aumento da concentração de gases do efeito estufa
-      na atmosfera. Aqui você vai ver o que é e onde o aquecimento global influencia.
-    </p>
+    <section class="secao-card-aquecimento">
+        <div class="card">
+            <h1>Aquecimento Global</h1>
+            <p>
+              O aquecimento global é o aumento gradual da temperatura média da Terra,
+              causado principalmente pelo aumento da concentração de gases do efeito estufa
+              na atmosfera. Aqui você vai ver o que é e onde o aquecimento global influencia.
+            </p>
 
-    <ul>
-      <li>O que é o aquecimento Global.</li>
-      <li>Impactos do aquecimento global.</li>
-      <li>Mudanças climáticas no Brasil.</li>
-      <li>Saúde.</li>
-      <li>Meio Ambiente e Agricultura.</li>
-      <li>Economia e Sociedade.</li>
-    </ul>
-     <img src="/imagens/Aquecimento-Global-2.jpg" 
-        alt="aquecimento Imagem">
-    <a href="pages/impactos.html" class="btn"> Saiba mais</a>
-  </div>
+            <ul>
+              <li>O que é o aquecimento Global.</li>
+              <li>Impactos do aquecimento global.</li>
+              <li>Mudanças climáticas no Brasil.</li>
+              <li>Saúde.</li>
+              <li>Meio Ambiente e Agricultura.</li>
+              <li>Economia e Sociedade.</li>
+            </ul>
+            <a href="pages/impactos.html" class="btn"> Saiba mais</a>
+        </div>
 </section>
 
 <!-- card de thai -->
@@ -494,6 +382,10 @@
 
         <img src="atmosfera.webp" 
              alt="Imagem do clima" class="imagem-card">
+    
+        <img src="/imagens/Aquecimento-Global-2.jpg" 
+             alt="aquecimento Imagem"
+             class="imagem-card-anaju">
     </section>
 
  
