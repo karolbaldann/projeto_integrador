@@ -32,10 +32,12 @@ function showSlide(index) {
 
 leftArrow.addEventListener('click', () => {
     showSlide(currentSlideIndex - 1);
+    console.log("click")
 });
 
 rightArrow.addEventListener('click', () => {
     showSlide(currentSlideIndex + 1);
+     console.log("click", currentSlideIndex, totalSlides)
 });
 
 dots.forEach((dot, index) => {
