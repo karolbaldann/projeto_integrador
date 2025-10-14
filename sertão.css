@@ -1,4 +1,4 @@
- /* Estilos gerais */
+/* Estilos gerais */
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -36,32 +36,47 @@ header h1 {
     overflow: hidden;
 }
 
-/* O checkbox que controla o estado - ele fica invisível */
+/* Esconde o checkbox */
 .topic-toggle {
     display: none;
 }
 
+/* Cabeçalho do tópico (h2 + imagem + ícone) */
 .topic-header {
     width: 100%;
     background: #fff;
-    padding: 1.5rem;
+    padding: 1.2rem 1.5rem;
     cursor: pointer;
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
     transition: background-color 0.3s ease;
+    gap: 10px;
 }
 
 .topic-header:hover {
     background-color: #f0f8ff;
 }
 
+/* Container do texto + imagem para ficarem juntos */
 .topic-header h2 {
     margin: 0;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #0056b3;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+/* Imagem ao lado do nome */
+.topic-header img {
+    width: 40px;
+    height: 40px;
+    border-radius: 6px;
+    object-fit: cover;
+}
+
+/* Ícone de + / x */
 .toggle-icon {
     font-size: 2rem;
     font-weight: bold;
@@ -69,23 +84,24 @@ header h1 {
     transition: transform 0.3s ease;
 }
 
-/* Conteúdo que é mostrado/escondido */
+/* Conteúdo que aparece ao clicar */
 .topic-content {
-    max-height: 0; /* Começa escondido */
+    max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out, padding 0.5s ease-out;
     padding: 0 1.5rem;
 }
 
+/* Imagem dentro do conteúdo */
 .topic-content img {
-    max-width: 100%;
+    max-width: 50%;
     height: auto;
-    border-radius: 8px;
+    border-radius: 4px;
     margin-bottom: 1.5rem;
     display: block;
 }
 
-/* Grade para os cards pequenos */
+/* Grade dos cards */
 .small-cards-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -93,7 +109,7 @@ header h1 {
     padding-bottom: 1.5rem;
 }
 
-/* Estilo dos cards pequenos */
+/* Estilo dos cards */
 .small-card {
     background-color: #e9f5ff;
     padding: 1rem;
@@ -112,16 +128,11 @@ header h1 {
     font-size: 0.9rem;
 }
 
-/* A MÁGICA ACONTECE AQUI! */
-
-/* 1. Quando o checkbox (.topic-toggle) está marcado (:checked)... */
-/* 2. Seleciona o ícone que vem depois dele (~ .topic-header .toggle-icon) e o rotaciona */
+/* Interatividade do acordeão */
 .topic-toggle:checked ~ .topic-header .toggle-icon {
     transform: rotate(45deg); 
 }
 
-/* 1. Quando o checkbox (.topic-toggle) está marcado (:checked)... */
-/* 2. Seleciona o conteúdo (.topic-content) que vem depois dele e o expande */
 .topic-toggle:checked ~ .topic-content {
     max-height: 100vh; 
     padding: 1.5rem;
