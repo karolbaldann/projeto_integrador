@@ -1,98 +1,116 @@
- /* principal */
+ /* Estilos gerais */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f9f4;
-    color: #333; 
+    font-family: Arial, sans-serif;
     line-height: 1.6;
     margin: 0;
-    padding: 20px;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
 }
 
-/* -titulo */
-h1 {
-    color: rgba(82, 141, 218, 1);
-    font-size: 2.5em;
+header {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 1.5rem;
     text-align: center;
-    margin-bottom: 40px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #b2d2e0ff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
-/* -container-cards*/
+header h1 {
+    margin: 0;
+    font-size: 2rem;
+}
+
 .container {
     max-width: 900px;
-    margin: 0 auto;
+    margin: 2rem auto;
+    padding: 0 20px;
 }
 
-/* estilo-card */
-.card {
-    background-color: #ffffff; 
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 30px;
-    padding: 25px;
-    display: flex;
-    align-items: center;
-    gap: 25px;
+/* Estrutura interativa (Acordeão) */
+.topic-container {
+    background: #fff;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden; /* Importante para o efeito de "sanfona" */
+}
+
+.topic-header {
+    width: 100%;
+    background: #fff;
+    border: none;
+    padding: 1.5rem;
     cursor: pointer;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    transition: background-color 0.3s ease;
 }
 
-/* efeito*/
-.card:hover {
-    transform: translateY(-8px); 
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15); 
+.topic-header:hover {
+    background-color: #f0f8ff;
 }
 
-.card:active {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
-}
-
-/* conteudo-card*/
-.card img {
-    max-width: 200px;
-    height: auto;
-    border-radius: 10px;
-    object-fit: cover;
-}
-
-.card-content {
-    flex: 1;
-}
-
-/* Título de cada card  */
-.card-content h2 {
-    color: rgb(18, 108, 226); 
-    font-size: 1.8em;
-    margin-top: 0;
-    margin-bottom: 15px;
-}
-
-/* Lista */
-ul {
-    padding-left: 20px;
+.topic-header h2 {
     margin: 0;
+    font-size: 1.5rem;
+    color: #0056b3;
 }
 
-li {
-    margin-bottom: 10px;
+.toggle-icon {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #007BFF;
+    transition: transform 0.3s ease;
 }
 
-/* Destaque-lista */
-strong {
-    color: #5774a0; 
+/* Estilo para quando o tópico está ativo/aberto */
+.topic-header.active .toggle-icon {
+    transform: rotate(45deg); /* Transforma o "+" em um "x" */
 }
 
-/* celular*/
-@media (max-width: 768px) {
-    .card {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+/* Conteúdo que é mostrado/escondido */
+.topic-content {
+    max-height: 0; /* Começa escondido */
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Animação suave */
+    padding: 0 1.5rem;
+}
 
-    .card img {
-        max-width: 100%;
-        margin-bottom: 20px;
-    }
+.topic-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    display: block;
+}
+
+/* Grade para os cards pequenos */
+.small-cards-grid {
+    display: grid;
+    /* Cria colunas responsivas: no mínimo 200px, preenchendo o espaço */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    padding-bottom: 1.5rem;
+}
+
+/* Estilo dos cards pequenos */
+.small-card {
+    background-color: #e9f5ff;
+    padding: 1rem;
+    border-left: 5px solid #007BFF;
+    border-radius: 0 8px 8px 0;
+}
+
+.small-card h4 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    color: #0056b3;
+}
+
+.small-card p {
+    margin: 0;
+    font-size: 0.9rem;
 }
