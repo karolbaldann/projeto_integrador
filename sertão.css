@@ -33,19 +33,22 @@ header h1 {
     margin-bottom: 1rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    overflow: hidden; /* Importante para o efeito de "sanfona" */
+    overflow: hidden;
+}
+
+/* O checkbox que controla o estado - ele fica invisível */
+.topic-toggle {
+    display: none;
 }
 
 .topic-header {
     width: 100%;
     background: #fff;
-    border: none;
     padding: 1.5rem;
     cursor: pointer;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    text-align: left;
     transition: background-color 0.3s ease;
 }
 
@@ -66,16 +69,11 @@ header h1 {
     transition: transform 0.3s ease;
 }
 
-/* Estilo para quando o tópico está ativo/aberto */
-.topic-header.active .toggle-icon {
-    transform: rotate(45deg); /* Transforma o "+" em um "x" */
-}
-
 /* Conteúdo que é mostrado/escondido */
 .topic-content {
-    max-height: 0; 
+    max-height: 0; /* Começa escondido */
     overflow: hidden;
-    transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Animação suave */
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
     padding: 0 1.5rem;
 }
 
@@ -112,4 +110,19 @@ header h1 {
 .small-card p {
     margin: 0;
     font-size: 0.9rem;
+}
+
+/* A MÁGICA ACONTECE AQUI! */
+
+/* 1. Quando o checkbox (.topic-toggle) está marcado (:checked)... */
+/* 2. Seleciona o ícone que vem depois dele (~ .topic-header .toggle-icon) e o rotaciona */
+.topic-toggle:checked ~ .topic-header .toggle-icon {
+    transform: rotate(45deg); 
+}
+
+/* 1. Quando o checkbox (.topic-toggle) está marcado (:checked)... */
+/* 2. Seleciona o conteúdo (.topic-content) que vem depois dele e o expande */
+.topic-toggle:checked ~ .topic-content {
+    max-height: 100vh; 
+    padding: 1.5rem;
 }

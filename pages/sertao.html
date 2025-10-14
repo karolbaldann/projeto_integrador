@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fenômenos das Chuvas no Sertão</title>
+    <title>Fenômenos das Chuvas no Sertão (CSS-Only)</title>
     <link rel="stylesheet" href="../sertão.css"> 
 </head>
 <body>
@@ -14,10 +14,11 @@
 
     <main class="container">
         <div class="topic-container">
-            <button class="topic-header">
+            <input type="checkbox" id="topic1" class="topic-toggle">
+            <label for="topic1" class="topic-header">
                 <h2>Tipos de Chuva</h2>
                 <span class="toggle-icon">+</span>
-            </button>
+            </label>
             <div class="topic-content">
                 <img src="../imagens/chuva.jpg" alt="Gotas de chuva em uma folha">
                 <div class="small-cards-grid">
@@ -38,10 +39,11 @@
         </div>
 
         <div class="topic-container">
-            <button class="topic-header">
+            <input type="checkbox" id="topic2" class="topic-toggle">
+            <label for="topic2" class="topic-header">
                 <h2>Tipos de Fenômenos</h2>
                 <span class="toggle-icon">+</span>
-            </button>
+            </label>
             <div class="topic-content">
                 <img src="../imagens/Chuva-Marciel-Bezerra.webp" alt="Chuva caindo no sertão">
                 <div class="small-cards-grid">
@@ -66,10 +68,11 @@
         </div>
 
         <div class="topic-container">
-            <button class="topic-header">
+            <input type="checkbox" id="topic3" class="topic-toggle">
+            <label for="topic3" class="topic-header">
                 <h2>Peculiaridades das Chuvas no Sertão</h2>
                 <span class="toggle-icon">+</span>
-            </button>
+            </label>
             <div class="topic-content">
                 <img src="../imagens/Foto-capa-1.webp" alt="Paisagem do sertão com nuvens de chuva">
                 <div class="small-cards-grid">
@@ -90,10 +93,11 @@
         </div>
 
         <div class="topic-container">
-            <button class="topic-header">
+            <input type="checkbox" id="topic4" class="topic-toggle">
+            <label for="topic4" class="topic-header">
                 <h2>Impactos Positivos das Chuvas</h2>
                 <span class="toggle-icon">+</span>
-            </button>
+            </label>
             <div class="topic-content">
                 <img src="../imagens/peculiaridads.jpg" alt="Vegetação verdejante no sertão após a chuva">
                 <div class="small-cards-grid">
@@ -118,6 +122,5 @@
         </div>
     </main>
 
-    <script src="script.js"></script>
 </body>
 </html>
