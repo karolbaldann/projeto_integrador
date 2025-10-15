@@ -3,170 +3,246 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fenômenos Atmosféricos</title>
-    <link href="estilos/estilo.css" rel="stylesheet" />
-    <link href="sertão.css" rel="stylesheet" />
-    <link href="estilos.css" rel="stylesheet" /> 
-    <link href="index.css" rel="stylesheet" /> 
-    
-    <style>
-        .secao-card {
-            display: flex;
-            flex-wrap: wrap; 
-            justify-content: center; 
-            margin-bottom: 40px;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-            padding: 20px;
-            gap: 30px; 
-        }
-
-        .card {
-            width: 300px; 
-            aspect-ratio: auto;
-            display: flex;
-            flex-direction: column; 
-            border-radius: 15px;
-            background-color: #f4f4f4;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            overflow: hidden; 
-        }
-
-        .card-imagem-topo {
-            width: 100%; 
-            height: 200px; 
-            object-fit: cover; 
-            display: block;
-            margin: 0; 
-            border-radius: 0; 
-        }
-
-        .card-conteudo {
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1; 
-            align-items: center;
-        }
-
-        .card-conteudo h1 {
-            font-size: 1.1em; 
-            margin-top: 0;
-            margin-bottom: 15px;
-            word-wrap: break-word; 
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 25px;
-            text-decoration: none;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: bold;
-            transition: background-color 0.3s ease, transform 0.1s ease;
-            margin-top: auto;
-            align-self: flex-start;
-            width: auto;
-        }
-
-        .btn:hover {
-            background-color: #0056b3;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .btn:active {
-            background-color: #004085;
-            transform: translateY(0);
-            box-shadow: none;
-        }
-
-        @media (max-width: 768px) {
-            .secao-card {
-                justify-content: center;
-            }
-            
-            .card {
-                 width: 90%; 
-                 margin-left: auto;
-                 margin-right: auto;
-            }
-        }
-    </style>
+    <title>Fenômenos Atmosféricos - Explorando Nossa Atmosfera</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
 </head>
 <body>
-    
-    <header>
-        <h1>Os fenômenos que envolvem a atmosfera</h1>
-    </header>
-
-    <section class="secao-card"> 
-
-        <div class="card primeiro-card"> 
-            <img src="nao.jpg" alt="Imagem da atmosfera" class="card-imagem-topo">
-            <div class="card-conteudo">
-                <h1>As funções da atmosfera</h1>
-                <div>
-                 <a href="pages/definicoes.html" class="btn">Saiba mais</a>
-                </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🌍</span>
+                <span class="logo-text">AtmosferaInfo</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link">Início</a></li>
+                <li><a href="#sobre" class="nav-link">Sobre</a></li>
+                <li><a href="#topicos" class="nav-link">Tópicos</a></li>
+                <li><a href="#contato" class="nav-link">Contato</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
+    </nav>
 
-        <div class="card">
-            <img src="image.jpg" alt="Imagem do sertão" class="card-imagem-topo">
-            <div class="card-conteudo">
-                <h1>Fenômenos das Chuvas no Sertão Cearense</h1>
-                <div>
-                    <a href="pages/sertao.html" class="btn">Saiba mais</a>
-                </div>
-                
-            </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title animate-fade-in">Os Fenômenos que Envolvem a Atmosfera</h1>
+            <p class="hero-subtitle animate-fade-in-delay">Explore os mistérios e maravilhas da camada que protege nosso planeta</p>
+            <a href="#topicos" class="hero-btn animate-fade-in-delay-2">Começar Exploração</a>
         </div>
-
-        <div class="card">
-            <img src="imagens/caatinga.jpg" alt="Imagem do clima" class="card-imagem-topo">
-            <div class="card-conteudo">
-                <h1>Clima do Ceará e suas pecularidades</h1>
-                <div>
-                  <a href="pages/climas.html" class="btn">Saiba mais</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="imagens/Aquecimento-Global-2.jpg" alt="aquecimento Imagem" class="card-imagem-topo">
-            <div class="card-conteudo">
-                <h1>Aquecimento Global</h1>
-                <div>
-                 <a href="pages/impactos.html" class="btn"> Saiba mais</a>
-                </div>
-            </div>
-        </div>
-
-        <div class="card">
-            <img src="atmosfera.webp" alt="Imagem do clima" class="card-imagem-topo">
-            <div class="card-conteudo">
-                <h1>A importância da atsmofera</h1>
-                <div>
-                 <a href="pages/importancia.html" class="btn">Saiba mais</a>
-                </div>
-            </div>
-
-        </div>
-        <div class="card">
-            <img src="imagens/Diversidade-de-especies.jpg" alt="diversidade de ambiente" class="card-imagem-topo">
-            <div class="card-conteudo">
-                <h1>Diversidade</h1>
-                <a href="pages/diversidade.html" class="btn"> Saiba mais</a>
-            </div>
-        </div>
-
+        <div class="hero-scroll-indicator">
+            <span>↓</span>
+        
     </section>
 
+    <!-- About Section -->
+    <section id="sobre" class="about-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Sobre Nossa Atmosfera</h2>
+                <p class="section-description">A atmosfera terrestre é uma camada complexa de gases que envolve nosso planeta, protegendo a vida e regulando o clima. Compreender seus fenômenos é essencial para entendermos nosso mundo.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Proteção</h3>
+                    <p>Filtra radiação solar nociva e protege contra meteoritos</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌡️</div>
+                    <h3>Regulação</h3>
+                    <p>Mantém temperaturas adequadas para a vida na Terra</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💨</div>
+                    <h3>Circulação</h3>
+                    <p>Distribui calor e umidade pelo planeta</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Topics Section -->
+    <section id="topicos" class="topics-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Explore os Tópicos</h2>
+                <p class="section-description">Descubra os diversos aspectos e fenômenos que compõem nossa atmosfera</p>
+            </div>
+            
+            <div class="cards-grid">
+                <article class="topic-card">
+                    <div class="card-image-wrapper">
+                        <img src="nao.jpg" alt="Imagem da atmosfera" class="card-image">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">As Funções da Atmosfera</h3>
+                        <p class="card-description">Descubra como a atmosfera protege e sustenta a vida em nosso planeta através de suas múltiplas camadas e funções essenciais.</p>
+                        <a href="pages/definicoes.html" class="card-btn">
+                            <span>Saiba mais</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="topic-card">
+                    <div class="card-image-wrapper">
+                        <img src="image.jpg" alt="Imagem do sertão" class="card-image">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Fenômenos das Chuvas no Sertão Cearense</h3>
+                        <p class="card-description">Entenda os padrões climáticos únicos do sertão e como os fenômenos atmosféricos influenciam as chuvas na região.</p>
+                        <a href="pages/sertao.html" class="card-btn">
+                            <span>Saiba mais</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="topic-card">
+                    <div class="card-image-wrapper">
+                        <img src="imagens/caatinga.jpg" alt="Imagem do clima" class="card-image">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Clima do Ceará e suas Peculiaridades</h3>
+                        <p class="card-description">Explore as características climáticas únicas do Ceará e como a geografia influencia os padrões atmosféricos locais.</p>
+                        <a href="pages/climas.html" class="card-btn">
+                            <span>Saiba mais</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="topic-card">
+                    <div class="card-image-wrapper">
+                        <img src="imagens/Aquecimento-Global-2.jpg" alt="Aquecimento Global" class="card-image">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Aquecimento Global</h3>
+                        <p class="card-description">Compreenda as causas e consequências do aquecimento global e seu impacto nos sistemas atmosféricos do planeta.</p>
+                        <a href="pages/impactos.html" class="card-btn">
+                            <span>Saiba mais</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="topic-card">
+                    <div class="card-image-wrapper">
+                        <img src="atmosfera.webp" alt="Importância da atmosfera" class="card-image">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">A Importância da Atmosfera</h3>
+                        <p class="card-description">Descubra por que a atmosfera é fundamental para a existência de vida e como ela interage com outros sistemas terrestres.</p>
+                        <a href="pages/importancia.html" class="card-btn">
+                            <span>Saiba mais</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+
+                <article class="topic-card">
+                    <div class="card-image-wrapper">
+                        <img src="imagens/Diversidade-de-especies.jpg" alt="Diversidade de ambiente" class="card-image">
+                        <div class="card-overlay"></div>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Diversidade</h3>
+                        <p class="card-description">Explore como a diversidade climática e atmosférica cria diferentes biomas e ecossistemas ao redor do mundo.</p>
+                        <a href="pages/diversidade.html" class="card-btn">
+                            <span>Saiba mais</span>
+                            <span class="btn-arrow">→</span>
+                        </a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">78%</div>
+                    <div class="stat-label">Nitrogênio</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">21%</div>
+                    <div class="stat-label">Oxigênio</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5</div>
+                    <div class="stat-label">Camadas</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">10000</div>
+                    <div class="stat-label">Extensão (km )</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3 class="footer-title">
+                        <span class="logo-icon">🌍</span>
+                        AtmosferaInfo
+                    </h3>
+                    <p class="footer-description">Explorando e compreendendo os fenômenos que envolvem nossa atmosfera.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Links Rápidos</h4>
+                    <ul class="footer-links">
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#sobre">Sobre</a></li>
+                        <li><a href="#topicos">Tópicos</a></li>
+                        <li><a href="#contato">Contato</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Tópicos</h4>
+                    <ul class="footer-links">
+                        <li><a href="pages/definicoes.html">Funções da Atmosfera</a></li>
+                        <li><a href="pages/sertao.html">Chuvas no Sertão</a></li>
+                        <li><a href="pages/climas.html">Clima do Ceará</a></li>
+                        <li><a href="pages/impactos.html">Aquecimento Global</a></li>
+                         <li><a href="pages/importancia.html">A importância da atmosfera</a></li>
+                        <li><a href="pages/diversidade.html">Diversidade</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contato</h4>
+                    <ul class="footer-links">
+                        <li>📧 karol.baldan12@aluno.ifce.edu.br</li>
+                        <li>📱 (88) 9 9677-4595</li>
+                        <li>📍 Ceará, Brasil</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 AtmosferaInfo. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
 </body>
 </html>
