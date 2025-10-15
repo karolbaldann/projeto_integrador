@@ -1,4 +1,4 @@
- 
+
     const backToTopButton = document.createElement('button');
     backToTopButton.textContent = '↑ Voltar ao Topo';
     backToTopButton.classList.add('back-to-top');
