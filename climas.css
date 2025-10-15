@@ -122,19 +122,36 @@ h1::after {
     text-align: left;
     border-bottom: none;
     padding-bottom: 0;
+    /* ADIÇÃO: Posicionamento relativo para a seta */
+    position: relative;
+    padding-right: 30px; /* Espaço para a seta */
 }
 
+/* ADIÇÃO: Ícone de seta para indicar que o card é clicável */
+.card-content h3::after {
+    content: '▼';
+    position: absolute;
+    right: 5px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.7em;
+    color: #007BFF;
+    transition: transform 0.5s ease;
+}
+
+/* ADIÇÃO: Rotação da seta quando o card está ativo */
+.card.active .card-content h3::after {
+    transform: translateY(-50%) rotate(180deg);
+}
+
+/* REMOVIDO: Estas propriedades não são necessárias aqui, pois o parágrafo
+   inteiro deve aparecer quando o card for expandido. */
 .card-content p {
     color: #555;
     font-size: 1.1em;
     margin-bottom: 0;
     text-align: left;
     line-height: 1.8;
-    display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limita o texto a 3 linhas */
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-    text-overflow: ellipsis;
 }
 
 /* Estilos para o conteúdo expandido (detalhes) */
@@ -143,31 +160,28 @@ h1::after {
     overflow: hidden;
     transition: max-height 0.7s ease-in-out, padding 0.7s ease-in-out;
     background-color: #f8faff;
-    border-top: 1px solid #e0e0e0;
     border-radius: 0 0 15px 15px;
-    padding: 0 25px; /* Padding inicial */
-}
-
-.card-details p {
-    color: #444;
-    font-size: 1em;
-    line-height: 1.7;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    text-align: left;
+    /* Removido o padding e a borda daqui para a transição ficar mais suave */
 }
 
 /* Classe ativa para expandir o conteúdo */
 .card.active .card-details {
     max-height: 500px; /* Valor grande o suficiente para o conteúdo */
     padding: 20px 25px;
+    margin-top: 15px; /* Adiciona um espaço quando expandido */
+    border-top: 1px solid #e0e0e0;
 }
 
-.card.active .card-content p {
-    -webkit-line-clamp: unset; /* Remove o limite de linhas quando expandido */
+/* MANTIDO: O estilo do parágrafo dentro dos detalhes */
+.card-details p {
+    color: #444;
+    font-size: 1em;
+    line-height: 1.7;
+    margin: 0; /* Removida margem extra para alinhar com o padding */
+    text-align: left;
 }
 
-/* Responsividade */
+/* Responsividade (sem alterações, já estava muito bom) */
 @media (max-width: 768px) {
     .main-container {
         margin: 20px auto;
@@ -195,12 +209,8 @@ h1::after {
         text-align: center;
     }
 
-    .card-content p {
+    .card-content p, .card-details p {
         text-align: center;
-    }
-
-    .card-details {
-        padding: 15px 20px;
     }
 }
 
@@ -227,12 +237,12 @@ h1::after {
         font-size: 1.4em;
     }
 
-    .card-content p {
+    .card-content p, .card-details p {
         font-size: 0.9em;
     }
 }
 
-/* Animações */
+/* Animações (sem alterações) */
 @keyframes fadeInDown {
     from {
         opacity: 0;
@@ -243,4 +253,3 @@ h1::after {
         transform: translateY(0);
     }
 }
-
