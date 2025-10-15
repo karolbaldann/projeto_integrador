@@ -253,3 +253,18 @@ h1::after {
         transform: translateY(0);
     }
 }
+
+/* ===== ESTILOS DO RODAPÉ ===== */
+.site-footer {
+    background-color: #0056b3; /* Usando o mesmo azul do título */
+    color: #ffffff; /* Texto branco para contraste */
+    text-align: center;
+    padding: 25px 20px;
+    margin-top: 50px; /* Espaço entre o conteúdo principal e o rodapé */
+    border-top: 4px solid #00BFFF; /* Detalhe com o azul mais claro */
+}
+
+.site-footer p {
+    margin: 5px 0; /* Espaçamento menor entre as linhas do rodapé */
+    font-size: 0.9em;
+}
