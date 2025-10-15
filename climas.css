@@ -142,10 +142,10 @@ h1::after {
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.7s ease-in-out, padding 0.7s ease-in-out;
-    padding: 0 25px;
     background-color: #f8faff;
     border-top: 1px solid #e0e0e0;
     border-radius: 0 0 15px 15px;
+    padding: 0 25px; /* Padding inicial */
 }
 
 .card-details p {
