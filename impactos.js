@@ -1,40 +1,19 @@
-document.addEventListener('DOMContentLoaded', () => {
+ 
+    const backToTopButton = document.createElement('button');
+    backToTopButton.textContent = '↑ Voltar ao Topo';
+    backToTopButton.classList.add('back-to-top');
+    document.body.appendChild(backToTopButton);
 
-    // --- EFEITO 1: ANIMAÇÃO DOS CARDS AO ROLAR A PÁGINA ---
-    const cards = document.querySelectorAll('.card');
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, {
-        threshold: 0.1
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) { // Mostra o botão após rolar 300px
+            backToTopButton.classList.add('show');
+        } else {
+            backToTopButton.classList.remove('show');
+        }
     });
 
-    cards.forEach(card => {
-        observer.observe(card);
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 
-    // --- EFEITO 2: LISTAS EXPANSÍVEIS (ACCORDION) ---
-    const accordionHeaders = document.querySelectorAll('.card h3');
-    accordionHeaders.forEach(header => {
-        header.innerHTML += ' <span class="icon">+</span>';
-        header.style.cursor = 'pointer';
 
-        header.addEventListener('click', () => {
-            const content = header.nextElementSibling;
-            const icon = header.querySelector('.icon');
-
-            if (content && content.tagName === 'UL') {
-                content.classList.toggle('active');
-                if (content.classList.contains('active')) {
-                    icon.textContent = '-';
-                } else {
-                    icon.textContent = '+';
-                }
-            }
-        });
-    });
-});
