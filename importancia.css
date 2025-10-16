@@ -22,9 +22,6 @@ h1 {
 
 h2 {
   font-size: 1.8rem;
-  border-bottom: 2px solid #90caf9;
-  padding-bottom: 8px;
-  margin-top: 0;
 }
 
 p {
@@ -45,49 +42,92 @@ section {
   padding: 20px 0;
 }
 
-/* Estilo Individual dos Cards */
+/* --- ESTILOS ATUALIZADOS PARA O EFEITO FLIP --- */
+
+/* 1. O contêiner principal do card (agora é o "palco" 3D) */
 .card {
-  background-color: #ffffff;
-  border-radius: 12px;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  padding: 25px;
-  display: flex;
-  flex-direction: column;
+  background-color: transparent; /* O fundo agora fica nas faces internas */
+  min-height: 350px;
+  border: none;
+  perspective: 1000px; /* Define a profundidade da cena 3D */
+  cursor: pointer;
+  box-shadow: none; /* A sombra também vai para as faces internas */
+
+  /* Animação de entrada ao rolar a página */
   opacity: 0;
   transform: translateY(20px);
-  
-  /* >>> ALTERAÇÃO 1: Adiciona uma transição suave para a animação <<< */
-  transition: opacity 0.6s ease-out, 
-              transform 0.4s ease-out, 
-              box-shadow 0.4s ease-out;
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
 }
-
-/* >>> NOVO CÓDIGO: Efeito de suspensão ao passar o mouse <<< */
-.card:hover {
-  transform: translateY(-8px); /* Move o card para cima */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
-}
-
-
 .card.visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Ao passar o mouse em um card já visível, combina os efeitos */
-.card.visible:hover {
-  transform: translateY(-8px);
+/* 2. O elemento interno que efetivamente vira */
+.card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s; /* Duração da animação de virada */
+  transform-style: preserve-3d;
 }
 
-.card img {
+/* 3. A classe que o JavaScript adiciona para ativar a virada */
+.card-inner.is-flipped {
+  transform: rotateY(180deg);
+}
+
+/* 4. Estilo comum para a frente e o verso do card */
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Para navegadores como Safari */
+  backface-visibility: hidden; /* Esconde o lado de trás do elemento durante a virada */
+  
+  /* Estilos visuais que antes eram do .card */
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* 5. Estilo específico do verso (começa pré-rotacionado) */
+.card-back {
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.card-front img {
   width: 100%;
   height: 200px;
   object-fit: cover;
   border-radius: 8px;
-  margin-bottom: 15px;
+  margin-top: 15px;
 }
 
+/* Cards simples da segunda seção (que não viram) */
+.simple-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    min-height: auto;
+    cursor: default; /* Cursor padrão pois não é clicável */
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+/* Efeito de suspensão para os cards simples */
+.simple-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Card de título/banner */
 .card.full-width {
   grid-column: 1 / -1;
   text-align: center;
@@ -97,6 +137,8 @@ section {
   font-weight: 700;
   opacity: 1;
   transform: translateY(0);
+  min-height: auto;
+  cursor: default;
 }
 
 .card.full-width h1 {
