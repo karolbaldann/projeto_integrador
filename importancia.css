@@ -1,16 +1,90 @@
- */
+/* Estilos Gerais */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 25px;
+  background-color: #f4f7f9;
+  color: #333;
+}
+
+h1, h2, h3 {
+  font-family: 'Merriweather', serif;
+  color: #0d47a1;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  border-bottom: 2px solid #90caf9;
+  padding-bottom: 8px;
+  margin-top: 0;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+section {
+  max-width: 1200px;
+  margin: 40px auto;
+}
+
+/* Container dos Cards */
+.cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+/* Estilo Individual dos Cards */
+.card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  
+  /* >>> ADIÇÃO IMPORTANTE PARA A ANIMAÇÃO <<< */
+  opacity: 0; /* Começa invisível */
+  transform: translateY(20px); /* Começa um pouco para baixo */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Define a transição suave */
+}
+
+/* >>> ESTADO FINAL DA ANIMAÇÃO <<< */
+.card.visible {
+  opacity: 1; /* Fica visível */
+  transform: translateY(0); /* Volta para a posição original */
+}
+
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+/* Card especial que ocupa a largura total */
 .card.full-width {
   grid-column: 1 / -1; /* Ocupa todas as colunas */
   text-align: center;
   background: linear-gradient(45deg, #bbdefb, #90caf9);
   color: #0d47a1;
   padding: 30px;
-  font-size: 1.5rem;
-  font-family: 'Merriweather', serif;
   font-weight: 700;
-  box-shadow: 0 10px 25px rgba(0, 0, 80, 0.2);
-  transform: translateY(0); /* Desativa o efeito de entrada para este card se for um título */
-  opacity: 1;
+  opacity: 1; /* Este card já começa visível */
+  transform: translateY(0);
 }
 
 .card.full-width h1 {
@@ -22,57 +96,7 @@
 
 /* Responsividade */
 @media (max-width: 768px) {
-  body {
-    padding: 15px;
-  }
-
-  h1 {
-    font-size: 2.2rem;
-    margin-bottom: 20px;
-  }
-
-  h2 {
-    font-size: 1.5rem;
-  }
-
-  p {
-    font-size: 1rem;
-  }
-
   .cards-container {
     grid-template-columns: 1fr;
-    gap: 20px;
-  }
-
-  .card {
-    padding: 20px;
-  }
-
-  .card img {
-    height: 180px;
-  }
-
-  .card.full-width {
-    padding: 20px;
-    font-size: 1.2rem;
-  }
-
-  .card.full-width h1 {
-    font-size: 2rem;
   }
 }
-
-@media (max-width: 480px) {
-  h1 {
-    font-size: 1.8rem;
-  }
-
-  h2 {
-    font-size: 1.3rem;
-  }
-
-  .card.full-width h1 {
-    font-size: 1.5rem;
-  }
-}
-

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.1
+        threshold: 0.1 /* Ativa quando 10% do card estiver visível */
     });
 
     cards.forEach(card => {
