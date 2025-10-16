@@ -105,6 +105,12 @@ body.pagina-aquecimento h1 {
     transition: transform 0.3s ease;
 }
 
+/* >>> NOVA REGRA ADICIONADA <<< */
+/* Anima o ícone "+" para virar um "x" quando o accordion está ativo */
+.card h3.active .icon {
+    transform: rotate(45deg);
+}
+
 /* ====== PARÁGRAFOS ====== */
 .card p {
     font-family: 'Heebo', sans-serif;
@@ -164,7 +170,7 @@ body.pagina-aquecimento h1 {
     cursor: pointer;
     opacity: 0;
     visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease; /* Adicionada transição para o hover */
     z-index: 1000;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
@@ -196,6 +202,7 @@ body.pagina-aquecimento h1 {
     }
     .cards-container .card {
         max-width: 90%;
+        margin: 0 auto; /* Centraliza os cards */
     }
     .card {
         margin: 15px auto;
@@ -241,4 +248,3 @@ body.pagina-aquecimento h1 {
         right: 15px;
     }
 }
-
