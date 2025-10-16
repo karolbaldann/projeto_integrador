@@ -54,17 +54,30 @@ section {
   padding: 25px;
   display: flex;
   flex-direction: column;
+  opacity: 0;
+  transform: translateY(20px);
   
-  /* >>> ADIÇÃO IMPORTANTE PARA A ANIMAÇÃO <<< */
-  opacity: 0; /* Começa invisível */
-  transform: translateY(20px); /* Começa um pouco para baixo */
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out; /* Define a transição suave */
+  /* >>> ALTERAÇÃO 1: Adiciona uma transição suave para a animação <<< */
+  transition: opacity 0.6s ease-out, 
+              transform 0.4s ease-out, 
+              box-shadow 0.4s ease-out;
 }
 
-/* >>> ESTADO FINAL DA ANIMAÇÃO <<< */
+/* >>> NOVO CÓDIGO: Efeito de suspensão ao passar o mouse <<< */
+.card:hover {
+  transform: translateY(-8px); /* Move o card para cima */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2); /* Aumenta a sombra */
+}
+
+
 .card.visible {
-  opacity: 1; /* Fica visível */
-  transform: translateY(0); /* Volta para a posição original */
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Ao passar o mouse em um card já visível, combina os efeitos */
+.card.visible:hover {
+  transform: translateY(-8px);
 }
 
 .card img {
@@ -75,15 +88,14 @@ section {
   margin-bottom: 15px;
 }
 
-/* Card especial que ocupa a largura total */
 .card.full-width {
-  grid-column: 1 / -1; /* Ocupa todas as colunas */
+  grid-column: 1 / -1;
   text-align: center;
   background: linear-gradient(45deg, #bbdefb, #90caf9);
   color: #0d47a1;
   padding: 30px;
   font-weight: 700;
-  opacity: 1; /* Este card já começa visível */
+  opacity: 1;
   transform: translateY(0);
 }
 
@@ -94,7 +106,6 @@ section {
   text-shadow: none;
 }
 
-/* Responsividade */
 @media (max-width: 768px) {
   .cards-container {
     grid-template-columns: 1fr;
