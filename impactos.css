@@ -21,7 +21,7 @@ body.pagina-aquecimento {
     text-align: center;
     color: white;
     padding: 0 20px;
-    background-image: url('../aquecimento.webp'); /* Adapte o caminho da imagem se necessário */
+    background-image:url("../projeto_integrador/imagens/aquecimento.webp"); /* Adapte o caminho da imagem se necessário */
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
