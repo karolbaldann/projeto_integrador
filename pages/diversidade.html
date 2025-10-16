@@ -4,113 +4,225 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diversidade Climática no Brasil</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      background-color: #f9f9f9;
-    }
-
-    h1 {
-      text-align: center;
-      color: #2e6da4;
-    }
-
-    p {
-      max-width: 800px;
-      margin: auto;
-      margin-bottom: 20px;
-    }
-
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-
-    .card {
-      background-color: white;
-      border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      width: 300px;
-      padding: 15px;
-      box-sizing: border-box;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .card:hover {
-     transform: translateY(-8px);
-     box-shadow: 0 10px 25px rgba(0, 0, 80, 0.2);
-     }
-
-    .card img {
-      width: 100%;
-      border-radius: 5px;
-      margin-top: 10px;
-    }
-
-    .card h2 {
-      font-size: 18px;
-      color: #333;
-    }
-
-    .card p {
-      font-size: 14px;
-      color: #555;
-    }
-  </style>
+    <link rel="stylesheet" href="../diversidade.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Diversidade Climática no Brasil</h1>
+            <p class="hero-subtitle">Um país de dimensões continentais com seis tipos principais de clima</p>
+        </div>
+        <div class="scroll-indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14"/><path d="m19 12-7 7-7-7"/></svg>
+        </div>
+    </header>
 
-<h1>Diversidade Climática no Brasil</h1>
+    <!-- Introduction Section -->
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-content">
+                <p class="intro-text">A diversidade climática do Brasil é influenciada por fatores como a <strong>latitude</strong>, a <strong>maritimidade</strong> e a <strong>circulação das massas de ar</strong>. Esses elementos condicionam a variedade de climas presentes no país, que se destacam tanto pela sua amplitude quanto pela sua complexidade.</p>
+                <p class="intro-text">No Brasil, são identificados <strong>seis tipos principais de clima</strong>, cada um com características únicas que moldam os ecossistemas, a vegetação e o modo de vida das populações locais.</p>
+            </div>
+        </div>
+    </section>
 
-<p>A diversidade climática do Brasil é influenciada por fatores como a latitude, a maritimidade e a circulação das massas de ar. Esses elementos condicionam a variedade de climas presentes no país, que se destacam tanto pela sua amplitude quanto pela sua complexidade.</p>
+    <!-- Climate Cards Section -->
+    <section class="climate-section">
+        <div class="container">
+            <div class="climate-grid">
+                
+                <!-- Card 1: Equatorial -->
+                <article class="climate-card" data-climate="equatorial">
+                    <div class="card-image-wrapper">
+                        <img src="clima-equatorial.jpg" alt="Floresta Amazônica representando o clima equatorial" class="card-image">
+                        <div class="card-overlay">
+                            <span class="card-badge">Região Norte</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+                        </div>
+                        <h2 class="card-title">Equatorial</h2>
+                        <p class="card-description">Temperaturas elevadas e alta umidade, com chuvas frequentes durante todo o ano. Vegetação densa e exuberante, como a da floresta amazônica, caracteriza este clima.</p>
+                        <div class="card-stats">
+                            <div class="stat-item">
+                                <span class="stat-icon">🌡️</span>
+                                <span class="stat-value">25-28°C</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">💧</span>
+                                <span class="stat-value">2000+ mm/ano</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
-<p>No Brasil, são identificados seis tipos principais de clima:</p>
+                <!-- Card 2: Semiárido -->
+                <article class="climate-card" data-climate="semiarido">
+                    <div class="card-image-wrapper">
+                        <img src="clima-semiarido.jpg" alt="Sertão nordestino representando o clima semiárido" class="card-image">
+                        <div class="card-overlay">
+                            <span class="card-badge">Nordeste</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                        </div>
+                        <h2 class="card-title">Semiárido</h2>
+                        <p class="card-description">Clima quente e seco, com pouca chuva e longos períodos de estiagem, predominante no Sertão nordestino. A escassez de água é um fator marcante desta região.</p>
+                        <div class="card-stats">
+                            <div class="stat-item">
+                                <span class="stat-icon">🌡️</span>
+                                <span class="stat-value">26-28°C</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">💧</span>
+                                <span class="stat-value">300-800 mm/ano</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
-<div class="card-container">
+                <!-- Card 3: Tropical -->
+                <article class="climate-card" data-climate="tropical">
+                    <div class="card-image-wrapper">
+                        <img src="clima-tropical.jpg" alt="Paisagem representando o clima tropical" class="card-image">
+                        <div class="card-overlay">
+                            <span class="card-badge">Centro-Oeste e Sudeste</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 16.2A4.5 4.5 0 0 0 17.5 8h-1.8A7 7 0 1 0 4 14.9"/><path d="M16 14a4 4 0 1 1-8 0"/></svg>
+                        </div>
+                        <h2 class="card-title">Tropical</h2>
+                        <p class="card-description">Duas estações bem definidas: verão quente e chuvoso, inverno seco e mais frio. Presente no Centro-Oeste e Sudeste, caracteriza grande parte do território brasileiro.</p>
+                        <div class="card-stats">
+                            <div class="stat-item">
+                                <span class="stat-icon">🌡️</span>
+                                <span class="stat-value">20-28°C</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">💧</span>
+                                <span class="stat-value">1000-1500 mm/ano</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
-  <div class="card">
-    <h2>Equatorial</h2>
-    <p>Temperaturas elevadas e alta umidade, com chuvas frequentes. Vegetação densa, como a da floresta amazônica.</p>
-    <img src="floresta-clima-equatorial.webp" alt="Clima Equatorial">
-  </div>
+                <!-- Card 4: Tropical de Altitude -->
+                <article class="climate-card" data-climate="altitude">
+                    <div class="card-image-wrapper">
+                        <img src="clima-tropical-altitude.jpg" alt="Região serrana representando o clima tropical de altitude" class="card-image">
+                        <div class="card-overlay">
+                            <span class="card-badge">Áreas Serranas</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m8 3 4 8 5-5 5 15H2L8 3z"/></svg>
+                        </div>
+                        <h2 class="card-title">Tropical de Altitude</h2>
+                        <p class="card-description">Regiões acima de 800 metros de altitude. Temperaturas mais amenas e ocorrência de geadas no inverno, comum em áreas serranas do Sudeste brasileiro.</p>
+                        <div class="card-stats">
+                            <div class="stat-item">
+                                <span class="stat-icon">🌡️</span>
+                                <span class="stat-value">18-22°C</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">💧</span>
+                                <span class="stat-value">1500-2000 mm/ano</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
-  <div class="card">
-    <h2>Semiárido</h2>
-    <p>Clima quente e seco, com pouca chuva, predominante no Sertão nordestino. A escassez de água é um fator marcante.</p>
-    <img src="semiarido.webp" alt="Clima Semiárido">
-  </div>
+                <!-- Card 5: Tropical Atlântico -->
+                <article class="climate-card" data-climate="atlantico">
+                    <div class="card-image-wrapper">
+                        <img src="clima-tropical-atlantico.jpg" alt="Litoral brasileiro representando o clima tropical atlântico" class="card-image">
+                        <div class="card-overlay">
+                            <span class="card-badge">Litoral</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M2 12c0 5.523 4.477 10 10 10s10-4.477 10-10S17.523 2 12 2 2 6.477 2 12z"/><path d="M12 2v20"/></svg>
+                        </div>
+                        <h2 class="card-title">Tropical Atlântico</h2>
+                        <p class="card-description">Ao longo da costa brasileira, com alta umidade e chuvas intensas no inverno, fortemente influenciado pelo oceano Atlântico e pela Mata Atlântica.</p>
+                        <div class="card-stats">
+                            <div class="stat-item">
+                                <span class="stat-icon">🌡️</span>
+                                <span class="stat-value">22-26°C</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">💧</span>
+                                <span class="stat-value">1200-2000 mm/ano</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
-  <div class="card">
-    <h2>Tropical</h2>
-    <p>Duas estações bem definidas: verão quente e chuvoso, inverno seco e mais frio. Presente no Centro-Oeste e Sudeste.</p>
-    <img src="tropical.webp" alt="Clima Tropical">
-  </div>
+                <!-- Card 6: Subtropical -->
+                <article class="climate-card" data-climate="subtropical">
+                    <div class="card-image-wrapper">
+                        <img src="clima-subtropical.jpg" alt="Região Sul representando o clima subtropical" class="card-image">
+                        <div class="card-overlay">
+                            <span class="card-badge">Região Sul</span>
+                        </div>
+                    </div>
+                    <div class="card-content">
+                        <div class="card-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12h20"/><path d="M20 12v6a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-6"/><path d="m4 8 8-6 8 6"/></svg>
+                        </div>
+                        <h2 class="card-title">Subtropical</h2>
+                        <p class="card-description">Predominante no Sul do Brasil, com as quatro estações bem definidas, invernos rigorosos, possibilidade de neve e vegetação adaptada ao frio.</p>
+                        <div class="card-stats">
+                            <div class="stat-item">
+                                <span class="stat-icon">🌡️</span>
+                                <span class="stat-value">14-22°C</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-icon">💧</span>
+                                <span class="stat-value">1200-2000 mm/ano</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
 
-  <div class="card">
-    <h2>Tropical de Altitude</h2>
-    <p>Regiões acima de 800m. Temperaturas mais amenas e ocorrência de geadas no inverno, comum em áreas serranas.</p>
-    <img src="clima-tropical-latitude.webp" alt="Clima Tropical de Altitude">
-  </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="card">
-    <h2>Tropical Atlântico</h2>
-    <p>Ao longo da costa, com alta umidade e chuvas intensas no inverno, influenciado pelo oceano Atlântico.</p>
-    <img src="tropical-atlantico.webp" alt="Clima Tropical Atlântico">
-  </div>
+    <!-- Conclusion Section -->
+    <section class="conclusion-section">
+        <div class="container">
+            <div class="conclusion-content">
+                <div class="conclusion-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>
+                </div>
+                <h2 class="conclusion-title">Impacto na Vida Brasileira</h2>
+                <p class="conclusion-text">Cada um desses climas contribui para a formação de <strong>ecossistemas distintos</strong> e influencia diretamente as <strong>atividades econômicas</strong> e <strong>culturais</strong> de cada região brasileira. A diversidade climática é um dos principais fatores que fazem do Brasil um país único em termos de biodiversidade e riqueza natural.</p>
+            </div>
+        </div>
+    </section>
 
-  <div class="card">
-    <h2>Subtropical</h2>
-    <p>Predominante no Sul, com invernos rigorosos, possibilidade de neve e vegetação adaptada ao frio.</p>
-    <img src="subtropical.webp" alt="Clima Subtropical">
-  </div>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2025 Diversidade Climática no Brasil. Desenvolvido por Ana Clara.</p>
+        </div>
+    </footer>
 
-</div>
-
-<p>Cada um desses climas contribui para a formação de ecossistemas distintos e influencia diretamente as atividades econômicas e culturais de cada região brasileira.</p>
-
+    <script src="../diversidade.js"></script>
 </body>
 </html>
- 
