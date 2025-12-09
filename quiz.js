@@ -35,12 +35,16 @@ const quizData = [
 
 const quiz = document.getElementById('quiz');
 const questionEl = document.getElementById('question');
-const a_text = document.getElementById('a_text');
-const b_text = document.getElementById('b_text');
-const c_text = document.getElementById('c_text');
-const d_text = document.getElementById('d_text');
 const submitBtn = document.getElementById('submit');
 const answerEls = document.querySelectorAll('.answer');
+
+// Mapeamento dos IDs para os elementos de texto (labels)
+const answerTextEls = {
+    a: document.getElementById('a_text'),
+    b: document.getElementById('b_text'),
+    c: document.getElementById('c_text'),
+    d: document.getElementById('d_text'),
+};
 
 let currentQuiz = 0;
 let score = 0;
@@ -49,14 +53,26 @@ loadQuiz();
 
 function loadQuiz() {
     deselectAnswers();
+    
+    // Remove classes de feedback de todas as respostas
+    answerEls.forEach(input => {
+        const label = answerTextEls[input.id];
+        if (label) {
+            label.classList.remove('correct', 'incorrect');
+        }
+    });
+
+    // Re-habilita o botão
+    submitBtn.disabled = false;
+    submitBtn.innerText = "Enviar Resposta";
 
     const currentQuizData = quizData[currentQuiz];
 
     questionEl.innerText = currentQuizData.question;
-    a_text.innerText = currentQuizData.a;
-    b_text.innerText = currentQuizData.b;
-    c_text.innerText = currentQuizData.c;
-    d_text.innerText = currentQuizData.d;
+    answerTextEls.a.innerText = currentQuizData.a;
+    answerTextEls.b.innerText = currentQuizData.b;
+    answerTextEls.c.innerText = currentQuizData.c;
+    answerTextEls.d.innerText = currentQuizData.d;
 }
 
 function deselectAnswers() {
@@ -73,26 +89,60 @@ function getSelected() {
     return answer;
 }
 
-submitBtn.addEventListener('click', () => {
-    const answer = getSelected();
+function showResults() {
+    quiz.innerHTML = `
+        <h2>Você completou o Quiz!</h2>
+        <p>Você acertou ${score} de ${quizData.length} perguntas.</p>
+        <button onclick="location.reload()">Tentar Novamente</button>
+    `;
+}
 
-    if(answer) {
-        if(answer === quizData[currentQuiz].correct) {
-            score++;
+function showFeedback(selectedAnswer, correctAnswer) {
+    // 1. Marca a resposta correta
+    const correctLabel = answerTextEls[correctAnswer];
+    if (correctLabel) {
+        correctLabel.classList.add('correct');
+    }
+
+    // 2. Marca a resposta incorreta (se houver)
+    if (selectedAnswer !== correctAnswer) {
+        const selectedLabel = answerTextEls[selectedAnswer];
+        if (selectedLabel) {
+            selectedLabel.classList.add('incorrect');
         }
+    }
+}
 
+submitBtn.addEventListener('click', () => {
+    const selectedAnswer = getSelected();
+
+    if(!selectedAnswer) {
+        alert("Por favor, selecione uma resposta antes de continuar.");
+        return;
+    }
+
+    const currentQuizData = quizData[currentQuiz];
+    const correctAnswer = currentQuizData.correct;
+
+    // 1. Desabilita o botão e mostra feedback
+    submitBtn.disabled = true;
+    showFeedback(selectedAnswer, correctAnswer);
+
+    // 2. Atualiza a pontuação
+    if(selectedAnswer === correctAnswer) {
+        score++;
+    }
+
+    
+    setTimeout(() => {
         currentQuiz++;
 
         if(currentQuiz < quizData.length) {
             loadQuiz();
         } else {
-            quiz.innerHTML = `
-                <h2>Você completou o Quiz!</h2>
-                <p>Você acertou ${score} de ${quizData.length} perguntas.</p>
-                <button onclick="location.reload()">Tentar Novamente</button>
-            `;
+            showResults();
         }
-    } else {
-        alert("Por favor, selecione uma resposta antes de continuar.");
-    }
+    }, 2000); 
 });
+
+
