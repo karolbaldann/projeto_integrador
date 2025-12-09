@@ -38,7 +38,6 @@ const questionEl = document.getElementById('question');
 const submitBtn = document.getElementById('submit');
 const answerEls = document.querySelectorAll('.answer');
 
-// Mapeamento dos IDs para os elementos de texto (labels)
 const answerTextEls = {
     a: document.getElementById('a_text'),
     b: document.getElementById('b_text'),
@@ -54,7 +53,6 @@ loadQuiz();
 function loadQuiz() {
     deselectAnswers();
     
-    // Remove classes de feedback de todas as respostas
     answerEls.forEach(input => {
         const label = answerTextEls[input.id];
         if (label) {
