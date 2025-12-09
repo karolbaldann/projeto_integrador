@@ -91,20 +91,23 @@ function getSelected() {
 
 function showResults() {
     quiz.innerHTML = `
-        <h2>Você completou o Quiz!</h2>
-        <p>Você acertou ${score} de ${quizData.length} perguntas.</p>
+        <div class="quiz-header">
+            <h2 style="color: #333">Você completou o Quiz!</h2>
+            <p style="text-align:center; font-size: 1.2rem;">Você acertou <strong>${score}</strong> de ${quizData.length} perguntas.</p>
+        </div>
         <button onclick="location.reload()">Tentar Novamente</button>
     `;
 }
 
+// Função para mostrar visualmente o acerto/erro
 function showFeedback(selectedAnswer, correctAnswer) {
-    // 1. Marca a resposta correta
+   
     const correctLabel = answerTextEls[correctAnswer];
     if (correctLabel) {
         correctLabel.classList.add('correct');
     }
 
-    // 2. Marca a resposta incorreta (se houver)
+    // 2. Se o usuário errou, marca a escolha dele de vermelho
     if (selectedAnswer !== correctAnswer) {
         const selectedLabel = answerTextEls[selectedAnswer];
         if (selectedLabel) {
@@ -124,16 +127,17 @@ submitBtn.addEventListener('click', () => {
     const currentQuizData = quizData[currentQuiz];
     const correctAnswer = currentQuizData.correct;
 
-    // 1. Desabilita o botão e mostra feedback
+
     submitBtn.disabled = true;
+    submitBtn.innerText = "Aguarde...";
     showFeedback(selectedAnswer, correctAnswer);
 
-    // 2. Atualiza a pontuação
+    
     if(selectedAnswer === correctAnswer) {
         score++;
     }
 
-    
+
     setTimeout(() => {
         currentQuiz++;
 
@@ -144,5 +148,3 @@ submitBtn.addEventListener('click', () => {
         }
     }, 2000); 
 });
-
-
