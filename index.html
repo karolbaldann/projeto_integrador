@@ -276,90 +276,53 @@
         </div>
     </footer>
 
-    <div onclick="abrirLogin()" style="
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background-color: #ff0000;
-    color: white;
-    padding: 15px 30px;
-    border-radius: 50px;
-    cursor: pointer;
-    font-family: sans-serif;
-    font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 10000;
-    ">
-    FAZER LOGIN
-    </div>
+   <form onsubmit="fazerLogin(event)">
+    <label style="display:block; margin-top:10px;">E-mail</label>
+    <input type="email" id="campoEmail" required placeholder="admin@teste.com" style="width: 100%; padding: 10px; margin-top:5px; box-sizing: border-box;">
 
-    <div id="modalLogin" style="
-        display: none;
-        position: fixed;
-        z-index: 10001;
-        left: 0;
-        top: 0;
+    <label style="display:block; margin-top:10px;">Senha</label>
+    <input type="password" id="campoSenha" required placeholder="******" style="width: 100%; padding: 10px; margin-top:5px; box-sizing: border-box;">
+
+    <button type="submit" style="
         width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.7);
-    ">
-        <div style="
-            background-color: #fefefe;
-            margin: 10% auto;
-            padding: 30px;
-            border: 1px solid #888;
-            width: 300px;
-            border-radius: 10px;
-            font-family: Arial, sans-serif;
-            position: relative;
-        ">
-            <span onclick="fecharLogin()" style="
-                position: absolute;
-                right: 15px;
-                top: 5px;
-                color: #aaa;
-                font-size: 28px;
-                font-weight: bold;
-                cursor: pointer;
-            ">&times;</span>
+        background-color: #28a745;
+        color: white;
+        padding: 12px;
+        border: none;
+        margin-top: 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        cursor: pointer;
+    ">ENTRAR</button>
+</form>
 
-            <h2 style="text-align:center; color: #333;">Acesse sua Conta</h2>
+<script>
+function fazerLogin(event) {
+    event.preventDefault(); 
 
-            <form action="backend/login.php" method="POST">
-                <label style="display:block; margin-top:10px;">E-mail</label>
-                <input type="email" name="email" required placeholder="admin@teste.com" style="width: 100%; padding: 10px; margin-top:5px; box-sizing: border-box;">
+    var emailDigitado = document.getElementById("campoEmail").value;
+    var senhaDigitada = document.getElementById("campoSenha").value;
 
-                <label style="display:block; margin-top:10px;">Senha</label>
-                <input type="password" name="senha" required placeholder="******" style="width: 100%; padding: 10px; margin-top:5px; box-sizing: border-box;">
+    // Defina aqui o login correto
+    var emailCorreto = "admin@teste.com";
+    var senhaCorreta = "123456";
 
-                <button type="submit" style="
-                    width: 100%;
-                    background-color: #28a745;
-                    color: white;
-                    padding: 12px;
-                    border: none;
-                    margin-top: 20px;
-                    border-radius: 5px;
-                    font-size: 16px;
-                    cursor: pointer;
-                ">ENTRAR</button>
-            </form>
-        </div>
-    </div>
-
-    <script>
-        function abrirLogin() {
-            document.getElementById("modalLogin").style.display = "block";
-        }
-        function fecharLogin() {
-            document.getElementById("modalLogin").style.display = "none";
-        }
+    if (emailDigitado === emailCorreto && senhaDigitada === senhaCorreta) {
+        alert("Login realizado com sucesso!");
         
-        window.onclick = function(event) {
-            if (event.target == document.getElementById("modalLogin")) {
-                fecharLogin();
-            }
-        }
-    </script>
+        
+        fecharLogin();
+        document.querySelector(".btn-login-menu").innerText = "Olá, Admin";
+        document.querySelector(".btn-login-menu").style.backgroundColor = "green";
+        
+        
+        var botaoFlutuante = document.querySelector("div[onclick='abrirLogin()']");
+        if(botaoFlutuante) botaoFlutuante.style.display = 'none';
+
+    } else {
+        alert("E-mail ou senha incorretos!");
+    }
+}
+</script>
 </body>
 </html>
