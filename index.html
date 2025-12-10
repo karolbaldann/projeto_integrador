@@ -257,74 +257,85 @@
         </div>
     </footer>
 
-<div id="modalLogin" class="modal-fundo">
-    <div class="modal-conteudo">
-        <span class="fechar" onclick="fecharLogin()">&times;</span>
-        
-        <h2 style="text-align: center; color: #333;">Login</h2>
-        
+    <div onclick="abrirLogin()" style="
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ff0000; /* Vermelho para destacar bem */
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: sans-serif;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 10000; /* Garante que fica em cima de tudo */
+">
+    FAZER LOGIN
+</div>
+
+<div id="modalLogin" style="
+    display: none; /* Começa invisível */
+    position: fixed;
+    z-index: 10001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7); /* Fundo escuro */
+">
+    <div style="
+        background-color: #fefefe;
+        margin: 10% auto;
+        padding: 30px;
+        border: 1px solid #888;
+        width: 300px;
+        border-radius: 10px;
+        font-family: Arial, sans-serif;
+        position: relative;
+    ">
+        <span onclick="fecharLogin()" style="
+            position: absolute;
+            right: 15px;
+            top: 5px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        ">&times;</span>
+
+        <h2 style="text-align:center; color: #333;">Acesse sua Conta</h2>
+
         <form action="backend/login.php" method="POST">
-            <div style="margin-bottom: 15px;">
-                <label style="display:block; margin-bottom:5px;">E-mail:</label>
-                <input type="email" name="email" required style="width: 100%; padding: 8px;">
-            </div>
+            <label style="display:block; margin-top:10px;">E-mail</label>
+            <input type="email" name="email" required placeholder="admin@teste.com" style="width: 100%; padding: 10px; margin-top:5px; box-sizing: border-box;">
 
-            <div style="margin-bottom: 15px;">
-                <label style="display:block; margin-bottom:5px;">Senha:</label>
-                <input type="password" name="senha" required style="width: 100%; padding: 8px;">
-            </div>
+            <label style="display:block; margin-top:10px;">Senha</label>
+            <input type="password" name="senha" required placeholder="******" style="width: 100%; padding: 10px; margin-top:5px; box-sizing: border-box;">
 
-            <button type="submit" style="width: 100%; padding: 10px; background-color: #28a745; color: white; border: none; cursor: pointer;">
-                ACESSAR
-            </button>
+            <button type="submit" style="
+                width: 100%;
+                background-color: #28a745;
+                color: white;
+                padding: 12px;
+                border: none;
+                margin-top: 20px;
+                border-radius: 5px;
+                font-size: 16px;
+                cursor: pointer;
+            ">ENTRAR</button>
         </form>
     </div>
 </div>
-
-<style>
-    
-    .modal-fundo {
-        display: none; 
-        position: fixed; 
-        z-index: 9999; 
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.6); 
-    }
-
-    
-    .modal-conteudo {
-        background-color: #fff;
-        margin: 10% auto; 
-        padding: 20px;
-        border: 1px solid #888;
-        width: 300px; 
-        border-radius: 8px;
-        font-family: Arial, sans-serif;
-    }
-
-    .fechar {
-        color: #aaa;
-        float: right;
-        font-size: 28px;
-        font-weight: bold;
-        cursor: pointer;
-    }
-    .fechar:hover { color: #000; }
-</style>
 
 <script>
     function abrirLogin() {
         document.getElementById("modalLogin").style.display = "block";
     }
-    
     function fecharLogin() {
         document.getElementById("modalLogin").style.display = "none";
     }
     
-   
     window.onclick = function(event) {
         if (event.target == document.getElementById("modalLogin")) {
             fecharLogin();
