@@ -1,6 +1,7 @@
 const quizData = [
     {
-        questão_1: "Qual é o principal gás responsável pelo efeito estufa?",
+        // CORRIGIDO: Agora usa 'question'
+        question: "Qual é o principal gás responsável pelo efeito estufa?",
         a: "Oxigênio",
         b: "Dióxido de Carbono",
         c: "Nitrogênio",
@@ -8,7 +9,8 @@ const quizData = [
         correct: "b",
     },
     {
-        questão_2: "A atmosfera é composta por camadas com diferentes funções. Qual camada é aquela onde vivemos e onde ocorrem os fenômenos climáticos??",
+        // CORRIGIDO
+        question: "A atmosfera é composta por camadas com diferentes funções. Qual camada é aquela onde vivemos e onde ocorrem os fenômenos climáticos??",
         a: "Estratosfera",
         b: "Termosfera",
         c: "Exosfera",
@@ -16,7 +18,8 @@ const quizData = [
         correct: "d",
     },
     {
-        questão_3: "Qual fonte de energia é considerada renovável?",
+        // CORRIGIDO
+        question: "Qual fonte de energia é considerada renovável?",
         a: "Carvão Mineral",
         b: "Petróleo",
         c: "Energia Solar",
@@ -24,7 +27,8 @@ const quizData = [
         correct: "c",
     },
     {
-        questão_4: "O que é 'pegada de carbono'?",
+        // CORRIGIDO
+        question: "O que é 'pegada de carbono'?",
         a: "A marca deixada por um pneu",
         b: "A quantidade de CO2 emitida por uma atividade ou indivíduo",
         c: "O rastro de um animal em extinção",
@@ -32,7 +36,8 @@ const quizData = [
         correct: "b",
     },
     {
-        questão_5: "O Brasil possui grande diversidade climática principalmente devido:",
+        // CORRIGIDO
+        question: "O Brasil possui grande diversidade climática principalmente devido:",
         a: "Ao pequeno tamanho do país",
         b: "À baixa variação de relevo",
         c: "À influência de diferentes massas de ar",
@@ -40,39 +45,44 @@ const quizData = [
         correct: "c",
     },
     {
-        questão_6: "O clima predominante no Ceará é:",
+        // CORRIGIDO
+        question: "O clima predominante no Ceará é:",
         a: "Equatorial úmido",
         b: "Tropical de altitude",
         c: "Semiárido",
         d: "Subtropical",
         correct: "c",
     },
-     {
-        questão_7: "As chuvas no sertão cearense são fortemente influenciadas por qual fator?",
+    {
+        // CORRIGIDO
+        question: "As chuvas no sertão cearense são fortemente influenciadas por qual fator?",
         a: "Furacões do Atlântico",
         b: "Erupções vulcânicas",
         c: "Atuação da Zona de Convergência Intertropical (ZCIT)",
         d: "Neve da Cordilheira dos Andes",
         correct: "c",
     },
-     {
-        questão_8: "A atmosfera ajuda a manter a Terra habitável principalmente porque:",
+    {
+        // CORRIGIDO
+        question: "A atmosfera ajuda a manter a Terra habitável principalmente porque:",
         a: "Mantém tudo sempre gelado",
         b: "Reflete toda a radiação solar",
         c: "Deixa o oxigênio apenas no espaço",
         d: "Regula a temperatura através do efeito estufa natural",
         correct: "d",
     },
-     {
-        questão_9: "Qual destes é um impacto já percebido no Brasil pelas mudanças climáticas?",
+    {
+        // CORRIGIDO
+        question: "Qual destes é um impacto já percebido no Brasil pelas mudanças climáticas?",
         a: "Redução de ondas de calor",
         b: "Extinção das secas prolongadas",
         c: "Aumento da ocorrência de eventos extremos",
         d: "Diminuição do nível do mar",
         correct: "c",
     },
-     {
-        questão_10: "O que acontece com a temperatura do ar conforme subimos na troposfera?",
+    {
+        // CORRIGIDO
+        question: "O que acontece com a temperatura do ar conforme subimos na troposfera?",
         a: "Aumenta rapidamente",
         b: "Fica igual em toda a altitude",
         c: "Diminui progressivamente",
@@ -101,6 +111,7 @@ loadQuiz();
 function loadQuiz() {
     deselectAnswers();
     
+    // Remove classes de feedback de todas as respostas
     answerEls.forEach(input => {
         const label = answerTextEls[input.id];
         if (label) {
@@ -114,7 +125,8 @@ function loadQuiz() {
 
     const currentQuizData = quizData[currentQuiz];
 
-    questionEl.innerText = currentQuizData.question;
+    // Aqui o código busca a chave 'question' que agora existe
+    questionEl.innerText = currentQuizData.question; 
     answerTextEls.a.innerText = currentQuizData.a;
     answerTextEls.b.innerText = currentQuizData.b;
     answerTextEls.c.innerText = currentQuizData.c;
@@ -147,7 +159,7 @@ function showResults() {
 
 // Função para mostrar visualmente o acerto/erro
 function showFeedback(selectedAnswer, correctAnswer) {
-   
+    // 1. Sempre marca a resposta CORRETA de verde
     const correctLabel = answerTextEls[correctAnswer];
     if (correctLabel) {
         correctLabel.classList.add('correct');
@@ -173,7 +185,7 @@ submitBtn.addEventListener('click', () => {
     const currentQuizData = quizData[currentQuiz];
     const correctAnswer = currentQuizData.correct;
 
-
+    // Desabilita o botão e mostra feedback visual
     submitBtn.disabled = true;
     submitBtn.innerText = "Aguarde...";
     showFeedback(selectedAnswer, correctAnswer);
